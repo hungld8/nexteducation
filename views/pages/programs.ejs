@@ -59,7 +59,7 @@
     </div>
     <ul class="diff-grid">
       <% site.difference.forEach((d, i) => { %>
-      <li class="diff reveal"><span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span><%- include('../partials/icon', { name: d.icon, size: 24 }) %><span><%= d[lang] %></span></li>
+      <li class="diff reveal"><span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span><%- include('../partials/icon', { name: d.icon, size: 24 }) %><span><%= L(d) %></span></li>
       <% }) %>
     </ul>
   </div>

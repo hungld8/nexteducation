@@ -13,8 +13,7 @@
     "menu": "Menu",
     "close": "Close menu",
     "skip": "Skip to content",
-    "switch": "Tiếng Việt",
-    "switchLabel": "Chuyển sang tiếng Việt"
+    "language": "Language"
   },
   "home": {
     "eyebrow": "International camps in Vietnam",
@@ -80,7 +79,6 @@
     "highlights": "Program highlights",
     "included": "Activities included",
     "itinerary": "Itinerary",
-    "day": "Day",
     "skills": "Skills",
     "schedule": "Sample daily schedule",
     "venues": "Venues",
@@ -89,7 +87,8 @@
     "brochure": "Photos & videos",
     "datesNote": "Dates are updated each season. Contact us for the next intake and pricing.",
     "other": "Other programs",
-    "back": "All programs"
+    "back": "All programs",
+    "dayFormat": "Day {n}"
   },
   "gallery": {
     "title": "Gallery",

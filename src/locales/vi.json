@@ -13,8 +13,7 @@
     "menu": "Menu",
     "close": "Đóng menu",
     "skip": "Bỏ qua đến nội dung",
-    "switch": "English",
-    "switchLabel": "Switch to English"
+    "language": "Ngôn ngữ"
   },
   "home": {
     "eyebrow": "Trại quốc tế tại Việt Nam",
@@ -80,7 +79,6 @@
     "highlights": "Điểm nổi bật",
     "included": "Hoạt động tiêu biểu",
     "itinerary": "Lịch trình",
-    "day": "Ngày",
     "skills": "Kỹ năng",
     "schedule": "Thời gian biểu mẫu một ngày",
     "venues": "Địa điểm",
@@ -89,7 +87,8 @@
     "brochure": "Hình ảnh & video",
     "datesNote": "Lịch khởi hành được cập nhật theo từng mùa. Liên hệ để biết đợt gần nhất và học phí.",
     "other": "Chương trình khác",
-    "back": "Tất cả chương trình"
+    "back": "Tất cả chương trình",
+    "dayFormat": "Ngày {n}"
   },
   "gallery": {
     "title": "Hình ảnh",

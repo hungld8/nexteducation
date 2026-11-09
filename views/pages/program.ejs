@@ -37,7 +37,7 @@
         <% program.itinerary.forEach((d, i) => { %>
         <details class="day reveal" <% if (i === 0) { %>open<% } %>>
           <summary>
-            <span class="day-num"><%= typeof d.day === 'number' ? t('program.day') + ' ' + d.day : L(d.day) %></span>
+            <span class="day-num"><%= typeof d.day === 'number' ? t('program.dayFormat').replace('{n}', d.day) : L(d.day) %></span>
             <span class="day-title"><%= L(d.title) %></span>
             <%- include('../partials/icon', { name: 'chevron-down', size: 20, className: 'icon day-chevron' }) %>
           </summary>

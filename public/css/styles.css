@@ -466,3 +466,30 @@ button { font: inherit; }
   .float-chat { right: 14px; bottom: 14px; width: 52px; height: 52px; }
   .network-photos img:last-child { margin-top: 24px; }
 }
+
+/* ---------- Language menu ---------- */
+.lang-menu { position: relative; }
+.lang-menu summary { list-style: none; cursor: pointer; }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-chevron { transition: transform .2s var(--ease); opacity: .7; }
+.lang-menu[open] .lang-chevron { transform: rotate(180deg); }
+.lang-list { position: absolute; right: 0; top: calc(100% + 8px); z-index: 120; min-width: 200px; padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+.lang-list a { display: flex; align-items: center; gap: .7rem; min-height: 44px; padding: .5rem .75rem; border-radius: var(--radius-sm); color: var(--ink); text-decoration: none; font-weight: 500; }
+.lang-list a:hover { background: var(--green-50); color: var(--green-700); }
+.lang-list a[aria-current] { color: var(--green-600); font-weight: 700; }
+.lang-list a .icon { margin-left: auto; }
+.lang-code { display: inline-grid; place-items: center; min-width: 30px; height: 22px; border-radius: 6px; background: var(--blue-50); color: var(--blue-500); font-size: .72rem; font-weight: 800; }
+.footer-langs { display: flex; flex-wrap: wrap; gap: .3rem 1rem; }
+.footer-langs a[aria-current] { color: #b9e79d; font-weight: 600; }
+
+/* ---------- CJK typography ---------- */
+html[lang="ko"] { --font: 'Be Vietnam Pro', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; }
+html[lang="ja"] { --font: 'Be Vietnam Pro', 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif; }
+html[lang="zh-Hans"] { --font: 'Be Vietnam Pro', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+html[lang="ko"] body { word-break: keep-all; overflow-wrap: anywhere; }
+html[lang="ja"] body, html[lang="zh-Hans"] body { line-break: strict; line-height: 1.8; }
+html[lang="ko"] h1, html[lang="ko"] h2, html[lang="ko"] h3,
+html[lang="ja"] h1, html[lang="ja"] h2, html[lang="ja"] h3,
+html[lang="zh-Hans"] h1, html[lang="zh-Hans"] h2, html[lang="zh-Hans"] h3 { letter-spacing: 0; line-height: 1.35; }
+html[lang="ko"] .hero h1, html[lang="ja"] .hero h1, html[lang="zh-Hans"] .hero h1 { max-width: 13em; font-size: clamp(1.9rem, 4vw, 3.2rem); }
+html[lang="ko"] .eyebrow, html[lang="ja"] .eyebrow, html[lang="zh-Hans"] .eyebrow { letter-spacing: .06em; }

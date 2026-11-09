@@ -29,7 +29,9 @@
   </div>
   <div class="container footer-bottom">
     <p>© <%= year %> Next Education. <%= t('footer.rights') %></p>
-    <a href="<%= switchUrl %>" hreflang="<%= otherLang %>" lang="<%= otherLang %>"><%= t('nav.switch') %></a>
+    <ul class="footer-langs" aria-label="<%= t('nav.language') %>">
+      <% languages.forEach(l => { %><li><a href="<%= l.href %>" hreflang="<%= l.hreflang %>" lang="<%= l.html %>" <% if (l.current) { %>aria-current="true"<% } %>><%= l.label %></a></li><% }) %>
+    </ul>
   </div>
 </footer>
 <a class="float-chat" href="<%= site.whatsapp %>" target="_blank" rel="noopener" aria-label="WhatsApp <%= site.hotline %>">
@@ -41,6 +43,6 @@
   <figure><img alt="" data-lb-img><figcaption data-lb-cap></figcaption></figure>
   <button class="lb-btn lb-next" type="button" data-lb-next aria-label="<%= t('gallery.next') %>"><%- include('icon', { name: 'chevron-right' }) %></button>
 </div>
-<script src="/js/main.js?v=1" defer></script>
+<script src="/js/main.js?v=2" defer></script>
 </body>
 </html>

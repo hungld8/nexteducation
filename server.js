@@ -19,12 +19,14 @@ const programs = require('./src/data/programs');
 const gallery = require('./src/data/gallery');
 const { sendContact } = require('./src/mailer');
 
-const LANGS = ['en', 'vi'];
-const DEFAULT_LANG = 'en';
-const locales = {
-  en: require('./src/locales/en.json'),
-  vi: require('./src/locales/vi.json'),
-};
+const { LANGUAGES, LANGS, DEFAULT_LANG } = require('./src/languages');
+const locales = {};
+const dataDict = {}; // English text -> translation, for kr/jp/cn content in src/data
+for (const l of LANGS) {
+  locales[l] = require(`./src/locales/${l}.json`);
+  const dictPath = path.join(__dirname, 'src/locales', `data.${l}.json`);
+  dataDict[l] = fs.existsSync(dictPath) ? require(dictPath) : {};
+}
 
 const app = express();
 app.disable('x-powered-by');
@@ -47,12 +49,19 @@ app.use(
 app.use(express.urlencoded({ extended: false, limit: '20kb' }));
 app.use(express.json({ limit: '20kb' }));
 
-/** Pick a localized value: accepts {en, vi} objects, arrays, or plain strings. */
+/**
+ * Pick a localized value from a { en, vi, ... } object.
+ * Order: value[lang] -> data.<lang>.json dictionary (keyed by the English text) -> English.
+ */
 function L(lang) {
+  const dict = dataDict[lang] || {};
+  const fromDict = (en) => (typeof en === 'string' && dict[en] ? dict[en] : en);
   return function tr(value) {
     if (value == null) return '';
-    if (typeof value === 'object' && !Array.isArray(value) && (value.en !== undefined || value.vi !== undefined)) {
-      return value[lang] !== undefined ? value[lang] : value[DEFAULT_LANG];
+    if (typeof value === 'object' && !Array.isArray(value) && value.en !== undefined) {
+      if (value[lang] !== undefined) return value[lang];
+      const en = value[DEFAULT_LANG];
+      return Array.isArray(en) ? en.map(fromDict) : fromDict(en);
     }
     return value;
   };
@@ -76,25 +85,28 @@ function withLang(req, res, next) {
   const { lang } = req.params;
   if (!LANGS.includes(lang)) return next('route');
   const rest = req.path.replace(new RegExp(`^/${lang}`), '') || '/';
+  const suffix = rest === '/' ? '' : rest;
   res.locals.lang = lang;
-  res.locals.otherLang = lang === 'en' ? 'vi' : 'en';
+  res.locals.langInfo = LANGUAGES.find((l) => l.code === lang);
+  res.locals.languages = LANGUAGES.map((l) => ({ ...l, href: `/${l.code}${suffix}`, current: l.code === lang }));
   res.locals.t = T(lang);
   res.locals.L = L(lang);
   res.locals.site = site;
   res.locals.programs = programs;
   res.locals.path = rest;
   res.locals.url = (p = '/') => `/${lang}${p === '/' ? '' : p}`;
-  res.locals.switchUrl = `/${res.locals.otherLang}${rest === '/' ? '' : rest}`;
-  res.locals.canonical = `${baseUrl(req)}/${lang}${rest === '/' ? '' : rest}`;
-  res.locals.alternates = LANGS.map((l) => ({ lang: l, href: `${baseUrl(req)}/${l}${rest === '/' ? '' : rest}` }));
+  res.locals.canonical = `${baseUrl(req)}/${lang}${suffix}`;
+  res.locals.alternates = LANGUAGES.map((l) => ({ lang: l.hreflang, href: `${baseUrl(req)}/${l.code}${suffix}` }));
   res.locals.year = new Date().getFullYear();
   next();
 }
 
 // Root: redirect by browser language
 app.get('/', (req, res) => {
-  const pref = req.acceptsLanguages('vi', 'en');
-  res.redirect(302, `/${pref === 'vi' ? 'vi' : DEFAULT_LANG}`);
+  const browserCodes = LANGUAGES.flatMap((l) => l.accept);
+  const pref = req.acceptsLanguages(...browserCodes);
+  const match = pref && LANGUAGES.find((l) => l.accept.includes(pref));
+  res.redirect(302, `/${match ? match.code : DEFAULT_LANG}`);
 });
 
 const router = express.Router({ mergeParams: true });
@@ -147,7 +159,7 @@ router.post('/contact', async (req, res) => {
   }
 });
 
-app.use('/:lang(en|vi)', withLang, router);
+app.use(`/:lang(${LANGS.join('|')})`, withLang, router);
 
 // SEO helpers
 app.get('/robots.txt', (req, res) => {
@@ -158,7 +170,7 @@ app.get('/sitemap.xml', (req, res) => {
   const b = baseUrl(req);
   const urls = paths
     .map(
-      (p) => `  <url><loc>${b}/en${p}</loc>${LANGS.map((l) => `<xhtml:link rel="alternate" hreflang="${l}" href="${b}/${l}${p}"/>`).join('')}</url>`
+      (p) => `  <url><loc>${b}/en${p}</loc>${LANGUAGES.map((l) => `<xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${b}/${l.code}${p}"/>`).join('')}</url>`
     )
     .join('\n');
   res

@@ -1,9 +1,9 @@
 # Next Education – Website
 
-Website song ngữ **Anh – Việt** giới thiệu Next Education: trại hè & trại đông quốc tế tại Hội An – Đà Nẵng.
+Website đa ngữ **Anh · Việt · Hàn · Nhật · Trung** giới thiệu Next Education: trại hè & trại đông quốc tế tại Hội An – Đà Nẵng.
 
 - Node.js + Express + EJS (render phía server, tốt cho SEO)
-- 2 ngôn ngữ: `/en/...` và `/vi/...` (trang chủ `/` tự chuyển theo ngôn ngữ trình duyệt)
+- 5 ngôn ngữ: `/en`, `/vi`, `/kr`, `/jp`, `/cn` (trang chủ `/` tự chuyển theo ngôn ngữ trình duyệt)
 - Trang: Trang chủ, Giới thiệu, Chương trình, Chi tiết 2 chương trình trại, Hình ảnh, Liên hệ
 - Form liên hệ gửi email qua SMTP (nodemailer), có chống spam (honeypot)
 - `sitemap.xml`, `robots.txt`, thẻ `hreflang`, Open Graph
@@ -22,9 +22,13 @@ npm run dev        # http://localhost:3000
 | Hotline, email, địa chỉ, số liệu, "Why us", cảm nhận | `src/data/site.js` |
 | Chương trình trại (lịch trình, điểm nổi bật, ảnh) | `src/data/programs.js` |
 | Thư viện ảnh | `src/data/gallery.js` |
-| Chữ trên giao diện (menu, tiêu đề, nút…) | `src/locales/en.json`, `src/locales/vi.json` |
+| Chữ trên giao diện (menu, tiêu đề, nút…) | `src/locales/{en,vi,kr,jp,cn}.json` |
+| Bản dịch Hàn/Nhật/Trung của nội dung (chương trình, giới thiệu, chú thích ảnh) | `src/locales/data.{kr,jp,cn}.json` — dạng `"câu tiếng Anh": "bản dịch"` |
+| Danh sách ngôn ngữ | `src/languages.js` |
 | Màu sắc, font, bố cục | `public/css/styles.css` (biến màu ở đầu file) |
 | Ảnh | `public/images/*.webp` |
+
+**Lưu ý đa ngữ:** nội dung trong `src/data` có bản EN/VI; bản Hàn/Nhật/Trung lấy từ `data.<lang>.json` theo đúng câu tiếng Anh. Khi sửa câu tiếng Anh, chạy `node scripts/i18n-strings.js kr` (hoặc `jp`, `cn`) để xem câu nào chưa có bản dịch — câu chưa dịch sẽ tạm hiển thị tiếng Anh.
 
 Thêm chương trình mới: copy một phần tử trong `src/data/programs.js`, đổi `slug` và nội dung — trang chi tiết, menu footer, sitemap và form liên hệ tự cập nhật.
 

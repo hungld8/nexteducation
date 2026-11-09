@@ -10,7 +10,7 @@ const navItems = [
   { key: 'contact', href: url('/contact') },
 ];
 %><!doctype html>
-<html lang="<%= lang %>">
+<html lang="<%= langInfo.html %>" data-lang="<%= lang %>">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,13 +25,13 @@ const navItems = [
   <meta property="og:description" content="<%= pageDesc %>">
   <meta property="og:url" content="<%= canonical %>">
   <meta property="og:image" content="/images/<%= ogImage %>.webp">
-  <meta property="og:locale" content="<%= lang === 'vi' ? 'vi_VN' : 'en_US' %>">
+  <meta property="og:locale" content="<%= langInfo.og %>">
   <meta name="theme-color" content="#2E7016">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800<% if (langInfo.font) { %>&family=<%= langInfo.font %>:wght@400;500;700;800<% } %>&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=3">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Next Education","url":"https://www.next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
@@ -56,9 +56,16 @@ const navItems = [
       </div>
     </nav>
     <div class="header-actions">
-      <a class="lang-switch" href="<%= switchUrl %>" hreflang="<%= otherLang %>" lang="<%= otherLang %>" aria-label="<%= t('nav.switchLabel') %>">
-        <%- include('icon', { name: 'languages', size: 18 }) %><span><%= otherLang.toUpperCase() %></span>
-      </a>
+      <details class="lang-menu" data-lang-menu>
+        <summary class="lang-switch" aria-label="<%= t('nav.language') %>: <%= langInfo.label %>">
+          <%- include('icon', { name: 'globe', size: 18 }) %><span><%= langInfo.short %></span><%- include('icon', { name: 'chevron-down', size: 16, className: 'icon lang-chevron' }) %>
+        </summary>
+        <ul class="lang-list">
+          <% languages.forEach(l => { %>
+          <li><a href="<%= l.href %>" hreflang="<%= l.hreflang %>" lang="<%= l.html %>" <% if (l.current) { %>aria-current="true"<% } %>><span class="lang-code"><%= l.short %></span><%= l.label %><% if (l.current) { %><%- include('icon', { name: 'check', size: 16 }) %><% } %></a></li>
+          <% }) %>
+        </ul>
+      </details>
       <a class="btn btn-primary btn-sm header-cta" href="<%= url('/contact') %>"><%= t('nav.cta') %></a>
       <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-open-label="<%= t('nav.menu') %>" data-close-label="<%= t('nav.close') %>" aria-label="<%= t('nav.menu') %>">
         <span class="nav-toggle-open"><%- include('icon', { name: 'menu' }) %></span>

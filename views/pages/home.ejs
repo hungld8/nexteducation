@@ -30,8 +30,8 @@
   <div class="container split">
     <div class="split-media reveal">
       <div class="photo-stack">
-        <img class="ps-main" src="/images/about-group-1.webp" alt="<%= lang === 'vi' ? 'Đoàn học sinh quốc tế của Next Education' : 'Next Education international student group' %>" loading="lazy" width="995" height="728">
-        <img class="ps-sub" src="/images/summer-lantern.webp" alt="<%= lang === 'vi' ? 'Trại viên làm đèn lồng tại Hội An' : 'Campers making lanterns in Hoi An' %>" loading="lazy" width="338" height="359">
+        <img class="ps-main" src="/images/about-group-1.webp" alt="<%= L({ en: 'Next Education international student group', vi: 'Đoàn học sinh quốc tế của Next Education' }) %>" loading="lazy" width="995" height="728">
+        <img class="ps-sub" src="/images/summer-lantern.webp" alt="<%= L({ en: 'Campers making lanterns in Hoi An', vi: 'Trại viên làm đèn lồng tại Hội An' }) %>" loading="lazy" width="338" height="359">
       </div>
     </div>
     <div class="split-body reveal">
@@ -90,9 +90,9 @@
       </ul>
     </div>
     <div class="dest-mosaic reveal">
-      <img src="/images/hoian-aerial.webp" alt="<%= lang === 'vi' ? 'Hội An nhìn từ trên cao' : 'Hoi An from above' %>" loading="lazy" width="1175" height="691">
-      <img src="/images/golden-bridge.webp" alt="<%= lang === 'vi' ? 'Cầu Vàng, Bà Nà Hills' : 'Golden Bridge, Ba Na Hills' %>" loading="lazy" width="1176" height="691">
-      <img src="/images/hoian-lanterns.webp" alt="<%= lang === 'vi' ? 'Đèn lồng phố cổ Hội An' : 'Lanterns in Hoi An Ancient Town' %>" loading="lazy" width="964" height="530">
+      <img src="/images/hoian-aerial.webp" alt="<%= L({ en: 'Hoi An from above', vi: 'Hội An nhìn từ trên cao' }) %>" loading="lazy" width="1175" height="691">
+      <img src="/images/golden-bridge.webp" alt="<%= L({ en: 'Golden Bridge, Ba Na Hills', vi: 'Cầu Vàng, Bà Nà Hills' }) %>" loading="lazy" width="1176" height="691">
+      <img src="/images/hoian-lanterns.webp" alt="<%= L({ en: 'Lanterns in Hoi An Ancient Town', vi: 'Đèn lồng phố cổ Hội An' }) %>" loading="lazy" width="964" height="530">
     </div>
   </div>
 </section>
@@ -108,7 +108,7 @@
       <li class="diff reveal">
         <span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span>
         <%- include('../partials/icon', { name: d.icon, size: 24 }) %>
-        <span><%= d[lang] %></span>
+        <span><%= L(d) %></span>
       </li>
       <% }) %>
     </ul>

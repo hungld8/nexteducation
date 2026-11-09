@@ -25,6 +25,13 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 900) setNav(false); });
   }
 
+  // Language menu: close on outside click / Escape
+  var langMenu = document.querySelector('[data-lang-menu]');
+  if (langMenu) {
+    document.addEventListener('click', function (e) { if (langMenu.open && !langMenu.contains(e.target)) langMenu.open = false; });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && langMenu.open) { langMenu.open = false; langMenu.querySelector('summary').focus(); } });
+  }
+
   // Reveal on scroll
   var pending = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   if (reduceMotion) {
