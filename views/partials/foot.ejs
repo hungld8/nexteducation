@@ -2,11 +2,13 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="/img/logo-white.png" alt="Next Education" width="150" height="66" loading="lazy">
+      <img src="/img/logo-white.png" alt="NEXT" width="150" height="66" loading="lazy">
       <p><%= t('footer.about') %></p>
       <div class="footer-social">
         <a href="<%= site.whatsapp %>" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
         <a href="<%= site.zalo %>" target="_blank" rel="noopener" aria-label="Zalo">Zalo</a>
+        <span>Line</span>
+        <span>KakaoTalk</span>
       </div>
     </div>
     <div>
@@ -14,7 +16,7 @@
       <ul class="footer-links">
         <li><a href="<%= url('/about') %>"><%= t('nav.about') %></a></li>
         <li><a href="<%= url('/programs') %>"><%= t('nav.programs') %></a></li>
-        <% programs.forEach(p => { %><li><a href="<%= url('/programs/' + p.slug) %>"><%= L(p.name) %></a></li><% }) %>
+        <li><a href="<%= url('/why-next') %>"><%= t('nav.why') %></a></li>
         <li><a href="<%= url('/gallery') %>"><%= t('nav.gallery') %></a></li>
       </ul>
     </div>
@@ -22,13 +24,14 @@
       <h2 class="footer-title"><%= t('footer.contact') %></h2>
       <ul class="footer-contact">
         <li><%- include('icon', { name: 'phone', size: 18 }) %><a href="<%= site.hotlineHref %>"><%= site.hotline %> (<%= site.contactPerson %>)</a></li>
+        <li><%- include('icon', { name: 'message-circle', size: 18 }) %><span><%= t('contact.chat') %></span></li>
         <li><%- include('icon', { name: 'mail', size: 18 }) %><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
         <li><%- include('icon', { name: 'map-pin', size: 18 }) %><span><%= L(site.offices[0].address) %></span></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <%= year %> Next Education. <%= t('footer.rights') %></p>
+    <p>© <%= year %> NEXT. <%= t('footer.rights') %></p>
     <ul class="footer-langs" aria-label="<%= t('nav.language') %>">
       <% languages.forEach(l => { %><li><a href="<%= l.href %>" hreflang="<%= l.hreflang %>" lang="<%= l.html %>" <% if (l.current) { %>aria-current="true"<% } %>><%= l.label %></a></li><% }) %>
     </ul>

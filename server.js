@@ -20,6 +20,7 @@ const gallery = require('./src/data/gallery');
 const { sendContact } = require('./src/mailer');
 
 const { LANGUAGES, LANGS, DEFAULT_LANG } = require('./src/languages');
+const imageSizes = require('./src/data/image-sizes.json');
 const locales = {};
 const dataDict = {}; // English text -> translation, for kr/jp/cn content in src/data
 for (const l of LANGS) {
@@ -93,6 +94,7 @@ function withLang(req, res, next) {
   res.locals.L = L(lang);
   res.locals.site = site;
   res.locals.programs = programs;
+  res.locals.imageSizes = imageSizes;
   res.locals.path = rest;
   res.locals.url = (p = '/') => `/${lang}${p === '/' ? '' : p}`;
   res.locals.canonical = `${baseUrl(req)}/${lang}${suffix}`;
@@ -114,6 +116,7 @@ const router = express.Router({ mergeParams: true });
 router.get('/', (req, res) => res.render('pages/home', { page: 'home', gallery }));
 router.get('/about', (req, res) => res.render('pages/about', { page: 'about' }));
 router.get('/programs', (req, res) => res.render('pages/programs', { page: 'programs' }));
+router.get('/why-next', (req, res) => res.render('pages/why', { page: 'why' }));
 router.get('/programs/:slug', (req, res, next) => {
   const program = programs.find((p) => p.slug === req.params.slug);
   if (!program) return next();
@@ -166,7 +169,7 @@ app.get('/robots.txt', (req, res) => {
   res.type('text/plain').send(`User-agent: *\nAllow: /\nSitemap: ${baseUrl(req)}/sitemap.xml\n`);
 });
 app.get('/sitemap.xml', (req, res) => {
-  const paths = ['', '/about', '/programs', ...programs.map((p) => `/programs/${p.slug}`), '/gallery', '/contact'];
+  const paths = ['', '/about', '/programs', '/why-next', ...programs.map((p) => `/programs/${p.slug}`), '/gallery', '/contact'];
   const b = baseUrl(req);
   const urls = paths
     .map(

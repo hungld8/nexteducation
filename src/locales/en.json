@@ -1,78 +1,252 @@
 {
   "meta": {
-    "title": "Next Education – International Summer & Winter Camps in Hoi An – Da Nang, Vietnam",
-    "description": "Next Education organizes international summer and winter camps in Hoi An – Da Nang, Vietnam for students worldwide: English with native teachers, culture, leadership and real-world learning."
+    "title": "NEXT – Specialized DMC & Experience Development in Vietnam",
+    "description": "NEXT is a Vietnam-based destination management and experience development company specializing in educational, cultural and experiential travel. Meaningful programs. Real-world experiences."
   },
   "nav": {
     "home": "Home",
-    "about": "About us",
+    "about": "About",
     "programs": "Programs",
+    "why": "Why NEXT",
     "gallery": "Gallery",
     "contact": "Contact",
-    "cta": "Enquire now",
+    "cta": "Contact NEXT",
     "menu": "Menu",
     "close": "Close menu",
     "skip": "Skip to content",
     "language": "Language"
   },
+  "brand": {
+    "slogan": "Change starts here.",
+    "positioning": "Specialized DMC & Experience Development",
+    "promise": "Meaningful Programs. Real-world Experiences.",
+    "philosophy": "Learn · Explore · Connect · Contribute",
+    "pillars": [
+      { "label": "Areas of specialization", "value": "Educational Travel · Cultural Travel · Experiential Travel" },
+      { "label": "Core capabilities", "value": "Experience & Program Development · Destination Management · Tailor-Made B2B Solutions" },
+      { "label": "Brand philosophy", "value": "Learn · Explore · Connect · Contribute" }
+    ]
+  },
   "home": {
-    "eyebrow": "International camps in Vietnam",
-    "title": "Summer & winter camps in <span>Hoi An – Da Nang</span>",
-    "lead": "Change starts here. We bring international students to Vietnam’s heritage coast for camps that blend English, culture, leadership and adventure.",
-    "ctaPrimary": "Explore programs",
-    "ctaSecondary": "Plan a custom camp",
-    "aboutEyebrow": "About Next Education",
-    "aboutTitle": "A trusted partner for educational travel and camps",
-    "aboutText": "For a decade, Next Education has designed and run educational travel programs, summer camps, winter camps and short-term camps for schools and organizations in Vietnam and around the world. We deliver authentic experiences, top-tier service and a dedicated attitude — accompanying schools on their journey to integrate with global education.",
-    "aboutLink": "Our story",
-    "programsEyebrow": "Signature programs",
-    "programsTitle": "Camps in Hoi An – Da Nang",
-    "programsText": "Two flagship camps, each fully customizable for your school or group.",
-    "whyEyebrow": "Why choose us",
-    "whyTitle": "Built for schools, loved by students",
-    "destEyebrow": "The destination",
-    "destTitle": "Why Hoi An – Da Nang?",
-    "destText": "A UNESCO World Heritage ancient town next to one of Asia’s most liveable beach cities. Safe, welcoming, full of culture, nature and great food — the perfect classroom without walls.",
-    "dest": [
-      "Hoi An Ancient Town – UNESCO World Heritage Site",
-      "Beaches, rivers, rice fields and coconut forests",
-      "Ba Na Hills, Golden Bridge & VinWonders",
-      "Da Nang International Fireworks Festival (summer)",
-      "International airport with direct flights across Asia"
+    "eyebrow": "NEXT – Specialized DMC & Experience Development",
+    "title": "Meaningful Programs. <span>Real-world Experiences.</span>",
+    "lead": "NEXT is a Vietnam-based destination management and experience development company specializing in educational, cultural and experiential travel.",
+    "ctaPrimary": "Explore our programs",
+    "ctaSecondary": "Contact NEXT",
+    "introEyebrow": "About NEXT",
+    "introTitle": "From ideas to meaningful journeys across Vietnam",
+    "intro": [
+      "We work with international travel brands, schools and organizations to design, develop and deliver customized programs across Vietnam.",
+      "Combining local expertise, thoughtful program design and a trusted partner network, we turn ideas into meaningful journeys and real-world experiences."
     ],
-    "diffEyebrow": "The NEXT difference",
-    "diffTitle": "Everything taken care of",
+    "tagline": "Explore. Connect. Contribute.",
+    "introLink": "More about NEXT",
+    "programsEyebrow": "Our programs",
+    "programsTitle": "Experiences with Purpose. Learning with Impact.",
+    "programsText": "Four program categories, each tailored to the objectives of your group.",
+    "programsLink": "View all programs",
+    "whyEyebrow": "Why NEXT",
+    "whyTitle": "A Specialized DMC for Educational, Cultural & Experiential Travel.",
+    "whyLink": "Why work with NEXT",
     "galleryEyebrow": "Moments",
-    "galleryTitle": "Life at camp",
+    "galleryTitle": "Real-world experiences",
     "galleryLink": "View full gallery",
     "testiEyebrow": "Testimonials",
-    "testiTitle": "What students and partners say",
-    "ctaTitle": "We can tailor your itinerary",
-    "ctaText": "Tell us about your group — age, size, dates and goals — and we’ll design a program for you.",
-    "ctaButton": "Get a free proposal"
+    "testiTitle": "What our partners and participants say"
+  },
+  "cta": {
+    "eyebrow": "Let's work together",
+    "title": "Looking for a destination partner or a team to develop your next program?",
+    "text": "Let's create it together.",
+    "button": "Contact NEXT"
   },
   "about": {
-    "title": "About Next Education",
-    "lead": "Change starts here.",
-    "storyTitle": "Our story",
-    "story1": "Next Education is proud to be a trusted partner in consulting and organizing educational travel programs, summer camps, winter camps and short-term camps for educational organizations in Vietnam and around the world.",
-    "story2": "With a decade of experience, we continuously strive to become a leading provider of professional, transformative and reputable camp programs. We are committed to authentic experiences, top-tier services and a dedicated service attitude, ensuring the highest level of satisfaction.",
-    "story3": "Our mission is to create an all-round development environment for children — where they build character, develop skills and fall in love with learning languages; where they don’t just learn and play, but are inspired on their way to becoming global citizens.",
-    "missionTitle": "Our mission",
-    "segmentsTitle": "Who we serve",
-    "networkTitle": "Our global network",
-    "networkText": "Besides our camps in Vietnam, we organize programs across the region and beyond.",
+    "title": "About NEXT",
+    "lead": "Specialized DMC & Experience Development",
+    "storyEyebrow": "About NEXT",
+    "storyTitle": "Meaningful Programs. Real-world Experiences.",
+    "story": [
+      "NEXT is a Vietnam-based destination management company, program developer and experience designer, specializing in educational, cultural and experiential travel.",
+      "We design, develop and deliver thoughtfully curated programs that go beyond traditional sightseeing. Combining destination expertise, local knowledge and meaningful experiences, we connect people with the places, cultures, communities and ideas that make each journey distinctive.",
+      "Our expertise is rooted in Vietnam, with an extensive network of trusted local partners, educators, experts, community organizations and experience providers. From educational journeys and cultural exchanges to nature-based discovery and sustainability experiences, we bring together the right people, places and activities to create programs tailored to each client's objectives.",
+      "We work with international travel brands, educational organizations, schools and businesses, providing destination management, customized program development and reliable in-country operations. Through our B2B and white-label partnerships, our clients retain their own brands and customer relationships while benefiting from NEXT's local expertise, program design capabilities and operational support.",
+      "At NEXT, we believe travel can be more than visiting a destination. It can be an opportunity to learn, explore, connect and contribute. Our commitment is to create well-designed programs, build lasting partnerships and deliver meaningful experiences with care, quality and responsibility."
+    ],
+    "vision": {
+      "label": "Our vision",
+      "title": "Connecting People Through Meaningful Experiences.",
+      "text": "To become a trusted destination and experience development partner in Vietnam and Southeast Asia, connecting people, organizations and communities through meaningful programs."
+    },
+    "mission": {
+      "label": "Our mission",
+      "title": "Turning Local Knowledge into Meaningful Journeys.",
+      "text": "To design and deliver thoughtful programs that connect people with places, cultures and communities through learning, exploration and shared experiences."
+    },
+    "beliefs": {
+      "eyebrow": "What we believe",
+      "title": "Travel is More Than Visiting Places.",
+      "text": "We believe every journey can create opportunities to discover something new, understand different perspectives and build meaningful connections.",
+      "intro": "Our programs are guided by four simple ideas:",
+      "items": [
+        { "name": "Learn", "title": "Learning happens everywhere.", "text": "We believe real-world experiences bring knowledge to life. By stepping beyond the classroom, people can learn through observation, participation, exploration and reflection." },
+        { "name": "Explore", "title": "The world is an open classroom.", "text": "We encourage people to explore new places, discover different ways of life and develop a deeper appreciation of the world around them." },
+        { "name": "Connect", "title": "Meaningful connections make every journey richer.", "text": "We create opportunities for people to connect with local communities, different cultures, new perspectives and one another." },
+        { "name": "Contribute", "title": "Every journey can make a difference.", "text": "We encourage responsible participation, respect for local communities and thoughtful engagement with the places we visit." }
+      ]
+    },
+    "values": {
+      "eyebrow": "Our values",
+      "title": "The Values Behind Everything We Do.",
+      "items": [
+        { "name": "Curiosity", "title": "Stay curious. Keep discovering.", "text": "We embrace curiosity, continuous learning and open-minded exploration. We believe every place, person and experience offers something new to discover." },
+        { "name": "Connection", "title": "Build relationships that matter.", "text": "We value genuine relationships and meaningful collaboration between people, cultures, organizations and communities." },
+        { "name": "Purpose", "title": "Create with intention.", "text": "We believe every program should have a clear purpose. We design experiences around meaningful objectives, relevant activities and valuable outcomes." },
+        { "name": "Responsibility", "title": "Respect people and places.", "text": "We are committed to respecting local cultures, supporting responsible engagement with communities and being mindful of the natural environment." },
+        { "name": "Integrity", "title": "Do what we say. Deliver what we promise.", "text": "We value honesty, transparency and accountability. We build trust through clear communication, reliable partnerships and consistent delivery." }
+      ]
+    },
+    "network": {
+      "eyebrow": "Our networks",
+      "title": "Better Experiences, Built Together.",
+      "lead": "Meaningful programs are never created alone.",
+      "text": [
+        "We work closely with a network of trusted local partners, educators, experts, community organizations and experience providers who bring their knowledge, skills and perspectives into every journey.",
+        "From schools and universities to local communities, cultural practitioners, environmental organizations and specialized activity providers, we connect the right people and resources to create experiences that are authentic, relevant and thoughtfully delivered.",
+        "By working together, we bring local knowledge to life and create stronger connections between our partners and the destinations they explore."
+      ]
+    },
     "officesTitle": "Our offices"
   },
   "programs": {
-    "title": "Our programs",
-    "lead": "International summer and winter camps in Hoi An – Da Nang, plus fully customized programs for schools, teachers, teams and families.",
+    "eyebrow": "Our programs",
+    "title": "Experiences with Purpose. Learning with Impact.",
+    "lead": "We create meaningful journeys that connect people with the real world — inspiring curiosity, deepening understanding and encouraging positive action.",
+    "introEyebrow": "Beyond traditional tours",
+    "introTitle": "Learn from the World. Make a Difference in the World.",
+    "intro": [
+      "We believe learning and travel should go beyond classrooms, textbooks and traditional sightseeing. They should open doors to the real world — helping people understand the challenges around them, discover different perspectives and connect with the world in meaningful ways.",
+      "At NEXT, we design programs around real-world experiences, local knowledge and meaningful human connections. From investigating environmental challenges and exploring cultural heritage to engaging with local communities, each journey offers opportunities to question, discover, collaborate and reflect.",
+      "Our purpose is not simply to create memorable experiences, but to inspire deeper understanding, more conscious choices and meaningful actions that continue long after the journey ends."
+    ],
+    "categoriesEyebrow": "Our four program categories",
+    "categoriesTitle": "Learn · Explore · Connect · Contribute",
+    "includes": "Programs include",
+    "categories": [
+      {
+        "key": "learn",
+        "name": "Learn",
+        "label": "Education & Experiential Learning",
+        "title": "Learning Beyond the Classroom.",
+        "text": ["We create educational journeys that connect learning with the real world. Through observation, hands-on exploration, interaction and reflection, participants investigate real-life issues, discover different perspectives and explore ways to make a positive difference."],
+        "list": ["Study Tours", "Educational Tours", "Learning Expeditions", "School & University Programs", "Junior Camps", "Family Learning Programs"],
+        "for": "For schools, universities, educational organizations, students and families.",
+        "button": "Explore Learn programs"
+      },
+      {
+        "key": "explore",
+        "name": "Explore",
+        "label": "Travel & Discovery",
+        "title": "Travel with Purpose. Discover More. Experience Deeper.",
+        "text": [
+          "We design journeys that go beyond sightseeing, inviting participants to discover the character of each destination through its landscapes, heritage, food, traditions and everyday life.",
+          "Through authentic local encounters and thoughtfully curated experiences, we help travelers connect more deeply with the places they visit and the people who make each destination unique."
+        ],
+        "list": ["Cultural & Heritage Journeys", "Nature & Adventure Experiences", "Food & Farming Experiences", "Wellness & Slow Travel", "Family & Small Group Journeys", "Customized Travel Programs"],
+        "for": "For international travel brands, families, private groups and independent travelers.",
+        "button": "Explore Travel programs"
+      },
+      {
+        "key": "connect",
+        "name": "Connect",
+        "label": "Cultural & International Exchange",
+        "title": "Bringing People and Cultures Together.",
+        "text": [
+          "We create opportunities for people, cultures and organizations to connect through shared experiences, meaningful conversations and collaborative activities.",
+          "Our programs encourage cultural understanding, international friendship and the exchange of ideas, knowledge and perspectives across borders."
+        ],
+        "list": ["Cultural Exchange Programs", "International Student Exchange", "Community Immersion", "School & University Partnerships", "Professional & Knowledge Exchange", "International Delegations & FAM Tours"],
+        "for": "For schools, universities, educational organizations, institutions and international partners.",
+        "button": "Explore Connect programs"
+      },
+      {
+        "key": "contribute",
+        "name": "Contribute",
+        "label": "Community & Sustainability Experiences",
+        "title": "Engage Locally. Contribute Meaningfully.",
+        "text": [
+          "We create opportunities for participants to actively engage with local communities and contribute to environmental and social initiatives.",
+          "Through responsible, hands-on activities and meaningful collaboration, participants become part of local efforts that support community well-being, environmental awareness and sustainable development."
+        ],
+        "list": ["Community-based Experiences", "Environmental & Sustainability Activities", "Conservation & Restoration Projects", "Sustainable Living & Circular Economy", "Community Development Projects", "Service-learning Programs"],
+        "for": "For schools, youth organizations, NGOs, businesses and groups interested in responsible experiences.",
+        "button": "Explore Contribute programs"
+      }
+    ],
+    "featuredEyebrow": "Featured camps",
+    "featuredTitle": "Junior camps in Hoi An – Da Nang",
+    "featuredText": "Two signature Learn programs for international students — each can be adapted to your group.",
     "details": "View details",
-    "customTitle": "Custom programs",
-    "customText": "Every school has its own goals. We design camps and educational tours around your students — from 3-day trips to multi-week camps, for groups of 15 to 600 students.",
-    "customCta": "Request a custom program",
-    "priceFrom": "From",
-    "perWeek": "USD / week"
+    "tailor": {
+      "eyebrow": "Tailor-made programs",
+      "title": "Every Group Is Different. Every Program Should Be Too.",
+      "text": [
+        "Every school, organization and travel partner has its own objectives, participants and expectations.",
+        "At NEXT, we believe meaningful programs should be designed around these differences.",
+        "We work closely with our partners to turn their ideas and objectives into thoughtfully designed journeys, combining the right destinations, local expertise, activities and experiences.",
+        "From initial concept development and program design to local partnerships, logistics and on-the-ground delivery, NEXT provides the expertise and support to bring each program to life."
+      ],
+      "howTitle": "How we work",
+      "steps": [
+        { "title": "Understand Your Objectives", "text": "Understand your group, participants, goals and expectations." },
+        { "title": "Design Your Program", "text": "Develop the concept, themes, activities, itinerary and intended outcomes." },
+        { "title": "Connect Local Partners", "text": "Bring together the right destinations, experts, communities and experience providers." },
+        { "title": "Deliver Your Journey", "text": "Coordinate local arrangements and manage on-the-ground delivery with care and reliability." }
+      ],
+      "ctaEyebrow": "Have a program in mind?",
+      "ctaTitle": "Let's Design It Together.",
+      "ctaButton": "Request a tailor-made program"
+    },
+    "vietnam": {
+      "eyebrow": "Rooted in Vietnam",
+      "title": "Discover Vietnam Through Local Perspectives.",
+      "text": [
+        "Vietnam is our home and the foundation of our expertise.",
+        "From vibrant cities and cultural heritage to rural communities, mountains, coastlines and natural landscapes, we connect our partners with diverse destinations and authentic local experiences across the country.",
+        "Our local knowledge and trusted partner network allow us to develop programs that reflect the character of each destination and the objectives of every group."
+      ]
+    },
+    "world": {
+      "eyebrow": "Connected to the world",
+      "title": "Learning and Exploring Beyond Borders.",
+      "text": [
+        "Beyond Vietnam, NEXT also develops and organizes international educational journeys, summer and winter camps, and experiential programs in destinations around the world.",
+        "From North America and Australia to Asia, we connect students and families with opportunities to explore new cultures, discover different learning environments and experience the world beyond their own borders.",
+        "Whether in Vietnam or abroad, we bring together trusted local partners and thoughtfully designed experiences to create meaningful journeys for every group."
+      ],
+      "destinationsLabel": "Our international programs span destinations including",
+      "destinations": ["Canada", "United States", "Australia", "China", "Singapore", "Malaysia", "Vietnam (Hoi An)"]
+    },
+    "brochure": {
+      "eyebrow": "Explore our 2027 programs",
+      "text": "Discover our upcoming educational journeys, summer camps, winter camps and experiential programs.",
+      "button": "Request the 2027 brochure"
+    }
+  },
+  "why": {
+    "eyebrow": "Why NEXT",
+    "title": "A Specialized DMC for Educational, Cultural & Experiential Travel.",
+    "intro": [
+      "NEXT brings together destination management and experience development to help international partners create and deliver distinctive travel programs.",
+      "From developing program concepts and sourcing local experiences to coordinating services and managing operations, we provide the local expertise and support to bring each journey to life."
+    ],
+    "diffTitle": "What makes NEXT different?",
+    "items": [
+      { "name": "Specialized in experience-led travel", "title": "We know what makes a journey different.", "text": "Our focus is on educational, cultural and experiential travel. We develop programs that go beyond conventional sightseeing, bringing together local knowledge, hands-on activities and authentic encounters." },
+      { "name": "Experience & program development", "title": "From ideas to well-designed programs.", "text": "We work with partners to develop concepts, themes, itineraries and activities around their objectives. Whether it's an educational journey, cultural exchange or customized travel program, we focus on what participants will actually experience." },
+      { "name": "Vietnam destination expertise", "title": "Local knowledge. Trusted connections.", "text": "Based in Vietnam, we work with a network of local suppliers, educators, experts, communities and experience providers. We connect our partners with the right people, places and services to create and deliver programs across the country." },
+      { "name": "Tailor-made B2B solutions", "title": "Built around your business and your clients.", "text": "We work with international travel brands, schools and organizations to develop programs that fit their markets, customers and objectives. Through flexible B2B and white-label partnerships, our partners can retain their own brands while relying on NEXT's local expertise and support." },
+      { "name": "Destination management & delivery", "title": "From planning to on-the-ground operations.", "text": "We coordinate local services, partners, logistics and program activities to ensure every detail is properly managed. Our team supports the delivery of each journey with attention to quality, safety and reliability." }
+    ]
   },
   "program": {
     "overview": "Overview",
@@ -92,7 +266,7 @@
   },
   "gallery": {
     "title": "Gallery",
-    "lead": "Moments from our camps and educational tours.",
+    "lead": "Moments from our programs, camps and journeys.",
     "all": "All",
     "camps": "Camps",
     "activities": "Activities",
@@ -104,19 +278,19 @@
     "next": "Next photo"
   },
   "contact": {
-    "title": "Contact us",
-    "lead": "For specific trip components or pricing, contact us — we usually reply within one business day.",
+    "title": "Contact NEXT",
+    "lead": "Looking for a destination partner or a team to develop your next program? Let's create it together.",
     "formTitle": "Send an enquiry",
     "name": "Full name",
     "email": "Email",
     "phone": "Phone / WhatsApp",
-    "organization": "School / organization",
+    "organization": "Company / school / organization",
     "country": "Country",
-    "program": "Program of interest",
-    "programOther": "Custom program / other",
+    "program": "I'm interested in",
+    "programOther": "Other",
     "participants": "Number of participants",
     "message": "Message",
-    "messagePh": "Group age, preferred dates, goals…",
+    "messagePh": "Your group, participants, objectives, preferred dates…",
     "optional": "optional",
     "submit": "Send enquiry",
     "sending": "Sending…",
@@ -128,10 +302,19 @@
     "hotline": "Hotline",
     "chat": "WhatsApp · Zalo · Line · KakaoTalk",
     "emailLabel": "Email",
-    "offices": "Offices"
+    "offices": "Offices",
+    "options": {
+      "learn": "Learn – Education & Experiential Learning",
+      "explore": "Explore – Travel & Discovery",
+      "connect": "Connect – Cultural & International Exchange",
+      "contribute": "Contribute – Community & Sustainability",
+      "custom": "Tailor-made program",
+      "brochure": "2027 brochure",
+      "partner": "B2B / white-label partnership"
+    }
   },
   "footer": {
-    "about": "International summer & winter camps in Hoi An – Da Nang, Vietnam for students worldwide.",
+    "about": "Specialized DMC & Experience Development. Educational, cultural and experiential travel across Vietnam.",
     "explore": "Explore",
     "contact": "Contact",
     "rights": "All rights reserved."

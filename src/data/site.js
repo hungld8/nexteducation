@@ -2,13 +2,13 @@
 
 // Company-wide information (edit here to update the whole site)
 module.exports = {
-  name: 'Next Education',
+  name: 'NEXT',
   domain: 'www.next.edu.vn',
-  hotline: '+84 904 779 885',
-  hotlineHref: 'tel:+84904779885',
-  contactPerson: 'Ms. Vivian',
-  whatsapp: 'https://wa.me/84904779885',
-  zalo: 'https://zalo.me/84904779885',
+  hotline: '+84 936 383 612',
+  hotlineHref: 'tel:+84936383612',
+  contactPerson: 'Ms. Rose Nguyen',
+  whatsapp: 'https://wa.me/84936383612',
+  zalo: 'https://zalo.me/84936383612',
   email: 'dos@next.edu.vn',
   mediaLink: 'https://bit.ly/NextGlobalCampMedia',
   offices: [

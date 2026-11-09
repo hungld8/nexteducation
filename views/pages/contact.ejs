@@ -1,5 +1,5 @@
-<%- include('../partials/head', { title: t('nav.contact'), description: t('contact.lead'), image: 'hero-group' }) %>
-<%- include('../partials/page-hero', { bg: 'hoian-sunset', heading: t('contact.title'), lead: t('contact.lead'), eyebrow: '', crumbs: [{ label: t('nav.contact') }] }) %>
+<%- include('../partials/head', { title: t('nav.contact'), description: t('contact.lead'), image: 'hd/d24-sm' }) %>
+<%- include('../partials/page-hero', { bg: 'hd/d24', heading: t('contact.title'), lead: t('contact.lead'), eyebrow: '', crumbs: [{ label: t('nav.contact') }] }) %>
 
 <section class="section">
   <div class="container contact-layout">
@@ -41,8 +41,9 @@
           <div class="field">
             <label for="f-program"><%= t('contact.program') %></label>
             <select id="f-program" name="program">
+              <% const opts = t('contact.options'); Object.keys(opts).forEach(k => { %><option value="<%= opts[k] %>" <%= selected === k ? 'selected' : '' %>><%= opts[k] %></option><% }) %>
               <% programs.forEach(p => { %><option value="<%= L(p.name) %> (<%= L(p.theme) %>)" <%= selected === p.slug ? 'selected' : '' %>><%= L(p.name) %> – <%= L(p.theme).split('·')[0].trim() %></option><% }) %>
-              <option value="<%= t('contact.programOther') %>" <%= selected === 'custom' ? 'selected' : '' %>><%= t('contact.programOther') %></option>
+              <option value="<%= t('contact.programOther') %>" <%= selected === 'other' ? 'selected' : '' %>><%= t('contact.programOther') %></option>
             </select>
           </div>
           <div class="field">
@@ -67,6 +68,8 @@
         <div class="btn-row">
           <a class="btn btn-sm btn-outline" href="<%= site.whatsapp %>" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn-sm btn-outline" href="<%= site.zalo %>" target="_blank" rel="noopener">Zalo</a>
+          <span class="btn btn-sm btn-outline btn-static">Line</span>
+          <span class="btn btn-sm btn-outline btn-static">KakaoTalk</span>
         </div>
       </div>
       <div class="info-card">

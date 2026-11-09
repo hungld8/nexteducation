@@ -20,7 +20,7 @@ module.exports = [
   { src: 'summer-outdoor-2', cat: 'activities', alt: { en: 'Outdoor games', vi: 'Trò chơi ngoài trời' } },
   { src: 'tour-singapore', cat: 'trips', alt: { en: 'Student tour in Singapore', vi: 'Tour học sinh tại Singapore' } },
   { src: 'camp-stage', cat: 'camps', alt: { en: 'Camp ceremony on stage', vi: 'Lễ trao chứng chỉ' } },
-  { src: 'hoian-river', cat: 'destinations', alt: { en: 'Thu Bon river, Hoi An', vi: 'Sông Thu Bồn, Hội An' } },
+  { src: 'hd/a31', cat: 'destinations', alt: { en: 'Thu Bon river and Hoi An from above', vi: 'Sông Thu Bồn và Hội An nhìn từ trên cao' } },
   { src: 'camp-group-field', cat: 'activities', alt: { en: 'Team games on the field', vi: 'Trò chơi đồng đội' } },
   { src: 'tour-lagoon', cat: 'trips', alt: { en: 'Water park trip', vi: 'Tham quan công viên nước' } },
   { src: 'camp-group-3', cat: 'camps', alt: { en: 'Camp group photo', vi: 'Ảnh tập thể trại' } },

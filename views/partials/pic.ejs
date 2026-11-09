@@ -1,0 +1,7 @@
+<%
+// Responsive image. include('../partials/pic', { name: 'hd/d62', alt: '', sizes: '50vw', eager: false, cls: '' })
+const _sz = imageSizes[name] || [1600, 1067];
+const _hd = name.indexOf('hd/') === 0;
+const _sizes = typeof sizes !== 'undefined' && sizes ? sizes : '(max-width: 900px) 100vw, 50vw';
+const _eager = typeof eager !== 'undefined' && eager;
+%><img src="/images/<%= name %>.webp"<% if (_hd) { %> srcset="/images/<%= name %>-sm.webp 1200w, /images/<%= name %>.webp 2400w" sizes="<%= _sizes %>"<% } %> alt="<%= typeof alt !== 'undefined' ? alt : '' %>"<% if (typeof cls !== 'undefined' && cls) { %> class="<%= cls %>"<% } %> width="<%= _sz[0] %>" height="<%= _sz[1] %>"<%- _eager ? ' fetchpriority="high"' : ' loading="lazy" decoding="async"' %>>

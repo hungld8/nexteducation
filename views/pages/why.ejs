@@ -1,0 +1,36 @@
+<%- include('../partials/head', { title: t('nav.why'), description: t('why.intro')[0], image: 'hd/d60-sm' }) %>
+<%- include('../partials/page-hero', { bg: 'hd/d7', heading: t('why.title'), lead: '', eyebrow: t('why.eyebrow'), crumbs: [{ label: t('nav.why') }] }) %>
+<% const whyIcon = ['compass', 'lightbulb', 'map-pin', 'handshake', 'shield']; %>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('brand.positioning') %></p>
+      <h2><%= t('brand.promise') %></h2>
+      <% t('why.intro').forEach((p, i) => { %><p class="<%= i === 0 ? 'lead-text' : '' %>"><%= p %></p><% }) %>
+    </div>
+    <div class="split-media reveal">
+      <%- include('../partials/pic', { name: 'hd/d60', cls: 'rounded-img', alt: L({ en: 'Happy campers', vi: 'Trại viên vui vẻ' }) }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head"><h2><%= t('why.diffTitle') %></h2></div>
+    <ol class="why-list">
+      <% t('why.items').forEach((w, i) => { %>
+      <li class="why-item reveal">
+        <span class="why-icon"><%- include('../partials/icon', { name: whyIcon[i], size: 24 }) %></span>
+        <span class="why-num"><%= String(i + 1).padStart(2, '0') %></span>
+        <h3><%= w.name %></h3>
+        <p class="why-sub"><%= w.title %></p>
+        <p><%= w.text %></p>
+      </li>
+      <% }) %>
+    </ol>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>

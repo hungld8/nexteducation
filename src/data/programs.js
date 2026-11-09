@@ -12,7 +12,7 @@ module.exports = [
       vi: 'Hành trình khám phá bản thân và thế giới xung quanh.',
     },
     cover: 'summer-outdoor-2',
-    hero: 'nature-resort-pool',
+    hero: 'summer-outdoor-1',
     facts: [
       { icon: 'map-pin', label: { en: 'Location', vi: 'Địa điểm' }, value: { en: 'Nature Resort, Hoi An', vi: 'Nature Resort, Hội An' } },
       { icon: 'clock', label: { en: 'Duration', vi: 'Thời gian' }, value: { en: '7 days 6 nights', vi: '7 ngày 6 đêm' } },
@@ -110,7 +110,7 @@ module.exports = [
       vi: 'Văn hóa, đổi mới toàn cầu và học tập thực hành tại Di sản Thế giới UNESCO.',
     },
     cover: 'golden-bridge',
-    hero: 'hoian-aerial',
+    hero: 'hd/a31',
     facts: [
       { icon: 'map-pin', label: { en: 'Location', vi: 'Địa điểm' }, value: { en: 'Hoi An – Da Nang', vi: 'Hội An – Đà Nẵng' } },
       { icon: 'clock', label: { en: 'Duration', vi: 'Thời gian' }, value: { en: '2 weeks', vi: '2 tuần' } },

@@ -1,78 +1,252 @@
 {
   "meta": {
-    "title": "Next Education – Trại hè & Trại đông Quốc tế tại Hội An – Đà Nẵng",
-    "description": "Next Education tổ chức trại hè, trại đông quốc tế tại Hội An – Đà Nẵng cho học sinh, sinh viên quốc tế: học tiếng Anh với giáo viên bản ngữ, văn hóa, kỹ năng lãnh đạo và trải nghiệm thực tế."
+    "title": "NEXT – DMC chuyên biệt & Phát triển trải nghiệm tại Việt Nam",
+    "description": "NEXT là công ty quản lý điểm đến và phát triển trải nghiệm tại Việt Nam, chuyên về du lịch giáo dục, văn hóa và trải nghiệm. Chương trình ý nghĩa. Trải nghiệm thực tế."
   },
   "nav": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "programs": "Chương trình",
+    "why": "Vì sao chọn NEXT",
     "gallery": "Hình ảnh",
     "contact": "Liên hệ",
-    "cta": "Đăng ký tư vấn",
+    "cta": "Liên hệ NEXT",
     "menu": "Menu",
     "close": "Đóng menu",
     "skip": "Bỏ qua đến nội dung",
     "language": "Ngôn ngữ"
   },
+  "brand": {
+    "slogan": "Thay đổi bắt đầu từ đây.",
+    "positioning": "DMC chuyên biệt & Phát triển trải nghiệm",
+    "promise": "Chương trình ý nghĩa. Trải nghiệm thực tế.",
+    "philosophy": "Learn · Explore · Connect · Contribute",
+    "pillars": [
+      { "label": "Lĩnh vực chuyên môn", "value": "Du lịch giáo dục · Du lịch văn hóa · Du lịch trải nghiệm" },
+      { "label": "Năng lực cốt lõi", "value": "Phát triển trải nghiệm & chương trình · Quản lý điểm đến · Giải pháp B2B thiết kế riêng" },
+      { "label": "Triết lý thương hiệu", "value": "Learn · Explore · Connect · Contribute" }
+    ]
+  },
   "home": {
-    "eyebrow": "Trại quốc tế tại Việt Nam",
-    "title": "Trại hè & trại đông quốc tế tại <span>Hội An – Đà Nẵng</span>",
-    "lead": "Thay đổi bắt đầu từ đây. Chúng tôi đưa học sinh, sinh viên quốc tế đến miền di sản Việt Nam với những trại kết hợp tiếng Anh, văn hóa, kỹ năng lãnh đạo và phiêu lưu.",
-    "ctaPrimary": "Xem chương trình",
-    "ctaSecondary": "Thiết kế trại riêng",
-    "aboutEyebrow": "Về Next Education",
-    "aboutTitle": "Đối tác tin cậy trong du lịch giáo dục và tổ chức trại",
-    "aboutText": "Suốt một thập kỷ, Next Education thiết kế và tổ chức các chương trình du lịch giáo dục, trại hè, trại đông và trại ngắn hạn cho các trường học, tổ chức giáo dục tại Việt Nam và trên thế giới. Chúng tôi mang đến trải nghiệm chân thực, dịch vụ hàng đầu và sự tận tâm — đồng hành cùng nhà trường trên hành trình hội nhập giáo dục toàn cầu.",
-    "aboutLink": "Câu chuyện của chúng tôi",
-    "programsEyebrow": "Chương trình tiêu biểu",
-    "programsTitle": "Trại tại Hội An – Đà Nẵng",
-    "programsText": "Hai chương trình trại chủ lực, có thể tùy chỉnh hoàn toàn theo nhu cầu của trường hoặc đoàn.",
-    "whyEyebrow": "Vì sao chọn chúng tôi",
-    "whyTitle": "Thiết kế cho nhà trường, được học sinh yêu thích",
-    "destEyebrow": "Điểm đến",
-    "destTitle": "Vì sao là Hội An – Đà Nẵng?",
-    "destText": "Phố cổ Di sản Thế giới UNESCO bên cạnh một trong những thành phố biển đáng sống nhất châu Á. An toàn, thân thiện, giàu văn hóa, thiên nhiên và ẩm thực — lớp học không tường lý tưởng.",
-    "dest": [
-      "Phố cổ Hội An – Di sản Văn hóa Thế giới UNESCO",
-      "Biển, sông, đồng lúa và rừng dừa Bảy Mẫu",
-      "Bà Nà Hills, Cầu Vàng & VinWonders",
-      "Lễ hội Pháo hoa Quốc tế Đà Nẵng (mùa hè)",
-      "Sân bay quốc tế với nhiều đường bay thẳng khắp châu Á"
+    "eyebrow": "NEXT – DMC chuyên biệt & Phát triển trải nghiệm",
+    "title": "Chương trình ý nghĩa. <span>Trải nghiệm thực tế.</span>",
+    "lead": "NEXT là công ty quản lý điểm đến (DMC) và phát triển trải nghiệm tại Việt Nam, chuyên về du lịch giáo dục, văn hóa và trải nghiệm.",
+    "ctaPrimary": "Khám phá chương trình",
+    "ctaSecondary": "Liên hệ NEXT",
+    "introEyebrow": "Về NEXT",
+    "introTitle": "Từ ý tưởng đến những hành trình ý nghĩa khắp Việt Nam",
+    "intro": [
+      "Chúng tôi hợp tác cùng các thương hiệu du lịch quốc tế, trường học và tổ chức để thiết kế, phát triển và triển khai các chương trình may đo trên khắp Việt Nam.",
+      "Kết hợp am hiểu địa phương, tư duy thiết kế chương trình chỉn chu và mạng lưới đối tác tin cậy, chúng tôi biến ý tưởng thành những hành trình ý nghĩa và trải nghiệm thực tế."
     ],
-    "diffEyebrow": "Khác biệt của NEXT",
-    "diffTitle": "Mọi thứ đều được chăm chút",
+    "tagline": "Khám phá. Kết nối. Đóng góp.",
+    "introLink": "Tìm hiểu thêm về NEXT",
+    "programsEyebrow": "Chương trình",
+    "programsTitle": "Trải nghiệm có mục đích. Học tập tạo tác động.",
+    "programsText": "Bốn nhóm chương trình, mỗi nhóm đều được thiết kế theo mục tiêu riêng của đoàn.",
+    "programsLink": "Xem tất cả chương trình",
+    "whyEyebrow": "Vì sao chọn NEXT",
+    "whyTitle": "DMC chuyên biệt cho du lịch giáo dục, văn hóa & trải nghiệm.",
+    "whyLink": "Vì sao hợp tác cùng NEXT",
     "galleryEyebrow": "Khoảnh khắc",
-    "galleryTitle": "Cuộc sống ở trại",
+    "galleryTitle": "Trải nghiệm thực tế",
     "galleryLink": "Xem toàn bộ hình ảnh",
     "testiEyebrow": "Cảm nhận",
-    "testiTitle": "Học sinh và đối tác nói gì về chúng tôi",
-    "ctaTitle": "Chúng tôi thiết kế lịch trình riêng cho bạn",
-    "ctaText": "Hãy cho chúng tôi biết về đoàn của bạn — độ tuổi, số lượng, thời gian và mục tiêu — chúng tôi sẽ thiết kế chương trình phù hợp.",
-    "ctaButton": "Nhận đề xuất miễn phí"
+    "testiTitle": "Đối tác và người tham gia nói gì về chúng tôi"
+  },
+  "cta": {
+    "eyebrow": "Cùng hợp tác",
+    "title": "Bạn đang tìm đối tác điểm đến hay đội ngũ phát triển chương trình tiếp theo?",
+    "text": "Hãy cùng nhau kiến tạo.",
+    "button": "Liên hệ NEXT"
   },
   "about": {
-    "title": "Giới thiệu Next Education",
-    "lead": "Thay đổi bắt đầu từ đây.",
-    "storyTitle": "Câu chuyện của chúng tôi",
-    "story1": "Next Education tự hào là đối tác tin cậy trong tư vấn và tổ chức các chương trình du lịch giáo dục, trại hè, trại đông và trại ngắn hạn cho các tổ chức giáo dục tại Việt Nam và trên thế giới.",
-    "story2": "Với một thập kỷ kinh nghiệm, chúng tôi không ngừng nỗ lực trở thành đơn vị hàng đầu cung cấp các chương trình trại chuyên nghiệp, mang tính chuyển đổi và uy tín. Chúng tôi cam kết mang đến trải nghiệm chân thực, dịch vụ hàng đầu và thái độ phục vụ tận tâm, đảm bảo sự hài lòng cao nhất.",
-    "story3": "Sứ mệnh của chúng tôi là mang đến môi trường phát triển toàn diện cho trẻ — nơi trẻ được học về xây dựng tính cách, phát triển kỹ năng, khơi gợi niềm yêu thích ngoại ngữ; nơi các con không chỉ được học, được chơi mà còn được truyền cảm hứng trên hành trình trở thành công dân toàn cầu.",
-    "missionTitle": "Sứ mệnh",
-    "segmentsTitle": "Đối tượng phục vụ",
-    "networkTitle": "Mạng lưới toàn cầu",
-    "networkText": "Bên cạnh các trại tại Việt Nam, chúng tôi còn tổ chức chương trình tại nhiều quốc gia trong khu vực và trên thế giới.",
+    "title": "Giới thiệu NEXT",
+    "lead": "DMC chuyên biệt & Phát triển trải nghiệm",
+    "storyEyebrow": "Về NEXT",
+    "storyTitle": "Chương trình ý nghĩa. Trải nghiệm thực tế.",
+    "story": [
+      "NEXT là công ty quản lý điểm đến, đơn vị phát triển chương trình và thiết kế trải nghiệm tại Việt Nam, chuyên về du lịch giáo dục, văn hóa và trải nghiệm.",
+      "Chúng tôi thiết kế, phát triển và triển khai những chương trình được tuyển chọn kỹ lưỡng, vượt ra ngoài các tour tham quan thông thường. Kết hợp chuyên môn điểm đến, hiểu biết địa phương và những trải nghiệm ý nghĩa, chúng tôi kết nối con người với những vùng đất, nền văn hóa, cộng đồng và ý tưởng làm nên dấu ấn riêng của mỗi hành trình.",
+      "Chuyên môn của chúng tôi bắt nguồn từ Việt Nam, cùng mạng lưới rộng khắp các đối tác địa phương, nhà giáo dục, chuyên gia, tổ chức cộng đồng và đơn vị cung cấp trải nghiệm đáng tin cậy. Từ hành trình giáo dục, giao lưu văn hóa đến khám phá thiên nhiên và trải nghiệm phát triển bền vững, chúng tôi quy tụ đúng con người, địa điểm và hoạt động để tạo nên chương trình phù hợp với mục tiêu của từng khách hàng.",
+      "Chúng tôi hợp tác cùng các thương hiệu du lịch quốc tế, tổ chức giáo dục, trường học và doanh nghiệp, cung cấp dịch vụ quản lý điểm đến, phát triển chương trình theo yêu cầu và vận hành tại Việt Nam một cách tin cậy. Thông qua hình thức hợp tác B2B và white-label, khách hàng vẫn giữ nguyên thương hiệu và quan hệ khách hàng của mình, đồng thời được hưởng lợi từ chuyên môn địa phương, năng lực thiết kế chương trình và hỗ trợ vận hành của NEXT.",
+      "Tại NEXT, chúng tôi tin rằng du lịch không chỉ là đến thăm một điểm đến. Đó còn là cơ hội để học hỏi, khám phá, kết nối và đóng góp. Cam kết của chúng tôi là tạo nên những chương trình được thiết kế chỉn chu, xây dựng quan hệ đối tác bền lâu và mang đến trải nghiệm ý nghĩa bằng sự tận tâm, chất lượng và trách nhiệm."
+    ],
+    "vision": {
+      "label": "Tầm nhìn",
+      "title": "Kết nối con người qua những trải nghiệm ý nghĩa.",
+      "text": "Trở thành đối tác phát triển điểm đến và trải nghiệm đáng tin cậy tại Việt Nam và Đông Nam Á, kết nối con người, tổ chức và cộng đồng thông qua những chương trình ý nghĩa."
+    },
+    "mission": {
+      "label": "Sứ mệnh",
+      "title": "Biến hiểu biết địa phương thành hành trình ý nghĩa.",
+      "text": "Thiết kế và triển khai những chương trình chỉn chu, kết nối con người với vùng đất, văn hóa và cộng đồng thông qua học tập, khám phá và trải nghiệm chung."
+    },
+    "beliefs": {
+      "eyebrow": "Niềm tin của chúng tôi",
+      "title": "Du lịch không chỉ là đến những nơi mới.",
+      "text": "Chúng tôi tin rằng mỗi hành trình đều có thể mở ra cơ hội khám phá điều mới, thấu hiểu những góc nhìn khác biệt và xây dựng những kết nối ý nghĩa.",
+      "intro": "Các chương trình của chúng tôi được định hướng bởi bốn ý tưởng giản dị:",
+      "items": [
+        { "name": "Learn", "title": "Học tập diễn ra ở mọi nơi.", "text": "Chúng tôi tin rằng trải nghiệm thực tế giúp kiến thức trở nên sống động. Khi bước ra khỏi lớp học, mỗi người có thể học qua quan sát, tham gia, khám phá và chiêm nghiệm." },
+        { "name": "Explore", "title": "Thế giới là một lớp học mở.", "text": "Chúng tôi khuyến khích mọi người khám phá những vùng đất mới, tìm hiểu những lối sống khác nhau và trân trọng sâu sắc hơn thế giới xung quanh." },
+        { "name": "Connect", "title": "Kết nối ý nghĩa làm mỗi hành trình thêm phong phú.", "text": "Chúng tôi tạo cơ hội để mọi người kết nối với cộng đồng địa phương, với những nền văn hóa khác nhau, những góc nhìn mới và với nhau." },
+        { "name": "Contribute", "title": "Mỗi hành trình đều có thể tạo nên khác biệt.", "text": "Chúng tôi khuyến khích sự tham gia có trách nhiệm, tôn trọng cộng đồng địa phương và gắn kết một cách chu đáo với những nơi chúng ta đến." }
+      ]
+    },
+    "values": {
+      "eyebrow": "Giá trị cốt lõi",
+      "title": "Những giá trị đằng sau mọi việc chúng tôi làm.",
+      "items": [
+        { "name": "Ham học hỏi", "title": "Luôn tò mò. Không ngừng khám phá.", "text": "Chúng tôi trân trọng sự tò mò, tinh thần học hỏi không ngừng và khám phá với tư duy cởi mở. Chúng tôi tin rằng mỗi nơi chốn, mỗi con người và mỗi trải nghiệm đều mang đến điều mới mẻ để khám phá." },
+        { "name": "Kết nối", "title": "Xây dựng những mối quan hệ có giá trị.", "text": "Chúng tôi coi trọng những mối quan hệ chân thành và sự hợp tác ý nghĩa giữa con người, các nền văn hóa, tổ chức và cộng đồng." },
+        { "name": "Mục đích", "title": "Kiến tạo có chủ đích.", "text": "Chúng tôi tin rằng mỗi chương trình cần có mục đích rõ ràng. Chúng tôi thiết kế trải nghiệm xoay quanh những mục tiêu ý nghĩa, hoạt động phù hợp và kết quả có giá trị." },
+        { "name": "Trách nhiệm", "title": "Tôn trọng con người và nơi chốn.", "text": "Chúng tôi cam kết tôn trọng văn hóa địa phương, thúc đẩy sự gắn kết có trách nhiệm với cộng đồng và luôn ý thức bảo vệ môi trường tự nhiên." },
+        { "name": "Chính trực", "title": "Nói là làm. Hứa là giữ.", "text": "Chúng tôi coi trọng sự trung thực, minh bạch và tinh thần trách nhiệm. Chúng tôi xây dựng niềm tin bằng giao tiếp rõ ràng, quan hệ đối tác tin cậy và chất lượng triển khai nhất quán." }
+      ]
+    },
+    "network": {
+      "eyebrow": "Mạng lưới đối tác",
+      "title": "Cùng nhau kiến tạo trải nghiệm tốt hơn.",
+      "lead": "Không chương trình ý nghĩa nào được tạo nên một mình.",
+      "text": [
+        "Chúng tôi hợp tác chặt chẽ với mạng lưới đối tác địa phương, nhà giáo dục, chuyên gia, tổ chức cộng đồng và đơn vị cung cấp trải nghiệm đáng tin cậy — những người mang kiến thức, kỹ năng và góc nhìn của mình vào từng hành trình.",
+        "Từ trường học, đại học đến cộng đồng địa phương, nghệ nhân và người thực hành văn hóa, tổ chức môi trường và các đơn vị cung cấp hoạt động chuyên biệt, chúng tôi kết nối đúng con người và nguồn lực để tạo nên những trải nghiệm chân thực, phù hợp và được triển khai chu đáo.",
+        "Bằng sự đồng hành, chúng tôi làm sống động hiểu biết địa phương và tạo nên kết nối bền chặt hơn giữa đối tác với những điểm đến họ khám phá."
+      ]
+    },
     "officesTitle": "Văn phòng"
   },
   "programs": {
-    "title": "Chương trình",
-    "lead": "Trại hè và trại đông quốc tế tại Hội An – Đà Nẵng, cùng các chương trình thiết kế riêng cho trường học, giáo viên, doanh nghiệp và gia đình.",
+    "eyebrow": "Chương trình",
+    "title": "Trải nghiệm có mục đích. Học tập tạo tác động.",
+    "lead": "Chúng tôi tạo nên những hành trình ý nghĩa, kết nối con người với thế giới thực — khơi gợi sự tò mò, đào sâu hiểu biết và khuyến khích hành động tích cực.",
+    "introEyebrow": "Vượt ra ngoài tour truyền thống",
+    "introTitle": "Học từ thế giới. Tạo khác biệt cho thế giới.",
+    "intro": [
+      "Chúng tôi tin rằng học tập và du lịch cần vượt ra ngoài lớp học, sách vở và những chuyến tham quan truyền thống. Chúng cần mở ra cánh cửa đến thế giới thực — giúp mỗi người hiểu những thách thức quanh mình, khám phá các góc nhìn khác nhau và kết nối với thế giới theo những cách ý nghĩa.",
+      "Tại NEXT, chúng tôi thiết kế chương trình dựa trên trải nghiệm thực tế, hiểu biết địa phương và những kết nối con người ý nghĩa. Từ tìm hiểu các thách thức môi trường, khám phá di sản văn hóa đến gắn kết với cộng đồng địa phương, mỗi hành trình đều mở ra cơ hội để đặt câu hỏi, khám phá, cộng tác và chiêm nghiệm.",
+      "Mục đích của chúng tôi không chỉ là tạo nên những trải nghiệm đáng nhớ, mà còn truyền cảm hứng để hiểu sâu hơn, lựa chọn có ý thức hơn và hành động ý nghĩa — kéo dài rất lâu sau khi hành trình kết thúc."
+    ],
+    "categoriesEyebrow": "Bốn nhóm chương trình",
+    "categoriesTitle": "Learn · Explore · Connect · Contribute",
+    "includes": "Chương trình bao gồm",
+    "categories": [
+      {
+        "key": "learn",
+        "name": "Learn",
+        "label": "Giáo dục & Học tập trải nghiệm",
+        "title": "Học tập vượt ra ngoài lớp học.",
+        "text": ["Chúng tôi tạo nên những hành trình giáo dục gắn kết việc học với thế giới thực. Thông qua quan sát, khám phá thực hành, tương tác và chiêm nghiệm, người tham gia tìm hiểu các vấn đề thực tiễn, khám phá những góc nhìn khác nhau và tìm cách tạo nên thay đổi tích cực."],
+        "list": ["Tour học tập (Study Tour)", "Tour giáo dục", "Hành trình học tập thực địa", "Chương trình cho trường phổ thông & đại học", "Trại thiếu niên", "Chương trình học tập cho gia đình"],
+        "for": "Dành cho trường phổ thông, đại học, tổ chức giáo dục, học sinh, sinh viên và gia đình.",
+        "button": "Khám phá chương trình Learn"
+      },
+      {
+        "key": "explore",
+        "name": "Explore",
+        "label": "Du lịch & Khám phá",
+        "title": "Du lịch có mục đích. Khám phá nhiều hơn. Trải nghiệm sâu hơn.",
+        "text": [
+          "Chúng tôi thiết kế những hành trình vượt ra ngoài tham quan đơn thuần, mời người tham gia khám phá bản sắc của mỗi điểm đến qua cảnh quan, di sản, ẩm thực, truyền thống và nhịp sống thường ngày.",
+          "Thông qua những cuộc gặp gỡ chân thực với người dân địa phương và các trải nghiệm được tuyển chọn kỹ lưỡng, chúng tôi giúp du khách gắn kết sâu sắc hơn với nơi họ đến và những con người làm nên nét độc đáo của mỗi điểm đến."
+        ],
+        "list": ["Hành trình văn hóa & di sản", "Trải nghiệm thiên nhiên & phiêu lưu", "Trải nghiệm ẩm thực & nông nghiệp", "Du lịch chăm sóc sức khỏe & du lịch chậm", "Hành trình cho gia đình & nhóm nhỏ", "Chương trình du lịch thiết kế riêng"],
+        "for": "Dành cho thương hiệu du lịch quốc tế, gia đình, đoàn riêng và du khách tự do.",
+        "button": "Khám phá chương trình Explore"
+      },
+      {
+        "key": "connect",
+        "name": "Connect",
+        "label": "Giao lưu văn hóa & Quốc tế",
+        "title": "Gắn kết con người và các nền văn hóa.",
+        "text": [
+          "Chúng tôi tạo cơ hội để con người, các nền văn hóa và tổ chức kết nối với nhau qua những trải nghiệm chung, những cuộc trò chuyện ý nghĩa và các hoạt động cộng tác.",
+          "Các chương trình của chúng tôi thúc đẩy sự thấu hiểu văn hóa, tình hữu nghị quốc tế và trao đổi ý tưởng, kiến thức, góc nhìn vượt qua biên giới."
+        ],
+        "list": ["Chương trình giao lưu văn hóa", "Trao đổi học sinh, sinh viên quốc tế", "Trải nghiệm hòa nhập cộng đồng", "Hợp tác trường phổ thông & đại học", "Giao lưu chuyên môn & chia sẻ tri thức", "Đoàn công tác quốc tế & FAM Tour"],
+        "for": "Dành cho trường phổ thông, đại học, tổ chức giáo dục, các cơ quan và đối tác quốc tế.",
+        "button": "Khám phá chương trình Connect"
+      },
+      {
+        "key": "contribute",
+        "name": "Contribute",
+        "label": "Trải nghiệm cộng đồng & Phát triển bền vững",
+        "title": "Gắn kết địa phương. Đóng góp ý nghĩa.",
+        "text": [
+          "Chúng tôi tạo cơ hội để người tham gia chủ động gắn kết với cộng đồng địa phương và đóng góp vào các sáng kiến môi trường và xã hội.",
+          "Thông qua các hoạt động thực hành có trách nhiệm và sự cộng tác ý nghĩa, người tham gia trở thành một phần trong nỗ lực của địa phương nhằm nâng cao đời sống cộng đồng, ý thức môi trường và phát triển bền vững."
+        ],
+        "list": ["Trải nghiệm dựa vào cộng đồng", "Hoạt động môi trường & phát triển bền vững", "Dự án bảo tồn & phục hồi", "Lối sống bền vững & kinh tế tuần hoàn", "Dự án phát triển cộng đồng", "Chương trình học tập phục vụ cộng đồng"],
+        "for": "Dành cho trường học, tổ chức thanh thiếu niên, tổ chức phi chính phủ (NGO), doanh nghiệp và các nhóm quan tâm đến trải nghiệm có trách nhiệm.",
+        "button": "Khám phá chương trình Contribute"
+      }
+    ],
+    "featuredEyebrow": "Trại tiêu biểu",
+    "featuredTitle": "Trại thiếu niên tại Hội An – Đà Nẵng",
+    "featuredText": "Hai chương trình Learn chủ lực dành cho học sinh quốc tế — có thể điều chỉnh theo từng đoàn.",
     "details": "Xem chi tiết",
-    "customTitle": "Chương trình thiết kế riêng",
-    "customText": "Mỗi trường có mục tiêu riêng. Chúng tôi thiết kế trại và tour giáo dục theo học sinh của bạn — từ chuyến đi 3 ngày đến trại nhiều tuần, cho đoàn từ 15 đến 600 học sinh.",
-    "customCta": "Yêu cầu chương trình riêng",
-    "priceFrom": "Chỉ từ",
-    "perWeek": "USD / tuần"
+    "tailor": {
+      "eyebrow": "Chương trình thiết kế riêng",
+      "title": "Mỗi đoàn một khác. Mỗi chương trình cũng vậy.",
+      "text": [
+        "Mỗi trường học, tổ chức và đối tác du lịch đều có mục tiêu, đối tượng tham gia và kỳ vọng riêng.",
+        "Tại NEXT, chúng tôi tin rằng chương trình ý nghĩa cần được thiết kế dựa trên chính những khác biệt đó.",
+        "Chúng tôi làm việc chặt chẽ với đối tác để biến ý tưởng và mục tiêu của họ thành những hành trình được thiết kế chỉn chu, kết hợp đúng điểm đến, chuyên môn địa phương, hoạt động và trải nghiệm.",
+        "Từ phát triển ý tưởng ban đầu, thiết kế chương trình đến kết nối đối tác địa phương, hậu cần và triển khai thực địa, NEXT mang đến chuyên môn và sự hỗ trợ để hiện thực hóa từng chương trình."
+      ],
+      "howTitle": "Cách chúng tôi làm việc",
+      "steps": [
+        { "title": "Thấu hiểu mục tiêu", "text": "Tìm hiểu về đoàn, người tham gia, mục tiêu và kỳ vọng của bạn." },
+        { "title": "Thiết kế chương trình", "text": "Xây dựng ý tưởng, chủ đề, hoạt động, lịch trình và kết quả mong đợi." },
+        { "title": "Kết nối đối tác địa phương", "text": "Quy tụ đúng điểm đến, chuyên gia, cộng đồng và đơn vị cung cấp trải nghiệm." },
+        { "title": "Triển khai hành trình", "text": "Điều phối các dịch vụ tại địa phương và quản lý triển khai thực địa một cách chu đáo, tin cậy." }
+      ],
+      "ctaEyebrow": "Bạn đã có ý tưởng chương trình?",
+      "ctaTitle": "Hãy cùng nhau thiết kế.",
+      "ctaButton": "Yêu cầu chương trình thiết kế riêng"
+    },
+    "vietnam": {
+      "eyebrow": "Bắt nguồn từ Việt Nam",
+      "title": "Khám phá Việt Nam qua góc nhìn bản địa.",
+      "text": [
+        "Việt Nam là quê hương và là nền tảng chuyên môn của chúng tôi.",
+        "Từ những thành phố sôi động, di sản văn hóa đến các cộng đồng nông thôn, núi non, bờ biển và cảnh quan thiên nhiên, chúng tôi kết nối đối tác với những điểm đến đa dạng và trải nghiệm địa phương chân thực trên khắp cả nước.",
+        "Hiểu biết địa phương và mạng lưới đối tác tin cậy giúp chúng tôi phát triển những chương trình phản ánh bản sắc của từng điểm đến và mục tiêu của từng đoàn."
+      ]
+    },
+    "world": {
+      "eyebrow": "Kết nối với thế giới",
+      "title": "Học tập và khám phá vượt biên giới.",
+      "text": [
+        "Bên cạnh Việt Nam, NEXT còn phát triển và tổ chức các hành trình giáo dục quốc tế, trại hè, trại đông và chương trình trải nghiệm tại nhiều điểm đến trên thế giới.",
+        "Từ Bắc Mỹ, Úc đến châu Á, chúng tôi mang đến cho học sinh và gia đình cơ hội khám phá những nền văn hóa mới, trải nghiệm môi trường học tập khác biệt và nhìn ra thế giới rộng lớn.",
+        "Dù tại Việt Nam hay ở nước ngoài, chúng tôi đều quy tụ đối tác địa phương tin cậy và những trải nghiệm được thiết kế chỉn chu để tạo nên hành trình ý nghĩa cho mỗi đoàn."
+      ],
+      "destinationsLabel": "Các chương trình quốc tế của chúng tôi trải rộng tại nhiều điểm đến như",
+      "destinations": ["Canada", "Hoa Kỳ", "Úc", "Trung Quốc", "Singapore", "Malaysia", "Việt Nam (Hội An)"]
+    },
+    "brochure": {
+      "eyebrow": "Khám phá chương trình 2027",
+      "text": "Tìm hiểu các hành trình giáo dục, trại hè, trại đông và chương trình trải nghiệm sắp tới của chúng tôi.",
+      "button": "Nhận brochure 2027"
+    }
+  },
+  "why": {
+    "eyebrow": "Vì sao chọn NEXT",
+    "title": "DMC chuyên biệt cho du lịch giáo dục, văn hóa & trải nghiệm.",
+    "intro": [
+      "NEXT kết hợp quản lý điểm đến và phát triển trải nghiệm, giúp các đối tác quốc tế xây dựng và triển khai những chương trình du lịch khác biệt.",
+      "Từ phát triển ý tưởng chương trình, tìm kiếm trải nghiệm địa phương đến điều phối dịch vụ và quản lý vận hành, chúng tôi mang đến chuyên môn địa phương và sự hỗ trợ để hiện thực hóa từng hành trình."
+    ],
+    "diffTitle": "Điều gì làm nên khác biệt của NEXT?",
+    "items": [
+      { "name": "Chuyên sâu về du lịch trải nghiệm", "title": "Chúng tôi hiểu điều gì làm một hành trình trở nên khác biệt.", "text": "Chúng tôi tập trung vào du lịch giáo dục, văn hóa và trải nghiệm. Các chương trình của chúng tôi vượt ra ngoài tham quan thông thường, kết hợp hiểu biết địa phương, hoạt động thực hành và những cuộc gặp gỡ chân thực." },
+      { "name": "Phát triển trải nghiệm & chương trình", "title": "Từ ý tưởng đến chương trình được thiết kế chỉn chu.", "text": "Chúng tôi cùng đối tác phát triển ý tưởng, chủ đề, lịch trình và hoạt động xoay quanh mục tiêu của họ. Dù là hành trình giáo dục, giao lưu văn hóa hay chương trình du lịch thiết kế riêng, chúng tôi luôn chú trọng vào những gì người tham gia thực sự trải nghiệm." },
+      { "name": "Chuyên môn điểm đến Việt Nam", "title": "Am hiểu địa phương. Kết nối tin cậy.", "text": "Có trụ sở tại Việt Nam, chúng tôi làm việc với mạng lưới nhà cung cấp địa phương, nhà giáo dục, chuyên gia, cộng đồng và đơn vị cung cấp trải nghiệm. Chúng tôi kết nối đối tác với đúng con người, địa điểm và dịch vụ để xây dựng và triển khai chương trình trên khắp cả nước." },
+      { "name": "Giải pháp B2B thiết kế riêng", "title": "Xây dựng theo doanh nghiệp và khách hàng của bạn.", "text": "Chúng tôi hợp tác cùng các thương hiệu du lịch quốc tế, trường học và tổ chức để phát triển chương trình phù hợp với thị trường, khách hàng và mục tiêu của họ. Thông qua mô hình hợp tác B2B và white-label linh hoạt, đối tác giữ nguyên thương hiệu của mình trong khi vẫn được hỗ trợ bởi chuyên môn địa phương của NEXT." },
+      { "name": "Quản lý điểm đến & triển khai", "title": "Từ lên kế hoạch đến vận hành thực địa.", "text": "Chúng tôi điều phối dịch vụ địa phương, đối tác, hậu cần và hoạt động chương trình để mọi chi tiết đều được quản lý chặt chẽ. Đội ngũ của chúng tôi đồng hành triển khai từng hành trình với sự chú trọng đến chất lượng, an toàn và độ tin cậy." }
+    ]
   },
   "program": {
     "overview": "Tổng quan",
@@ -85,14 +259,14 @@
     "photos": "Hình ảnh các trại đã tổ chức",
     "enquire": "Đăng ký tư vấn trại này",
     "brochure": "Hình ảnh & video",
-    "datesNote": "Lịch khởi hành được cập nhật theo từng mùa. Liên hệ để biết đợt gần nhất và học phí.",
+    "datesNote": "Lịch khởi hành được cập nhật theo từng mùa. Liên hệ để biết đợt gần nhất và chi phí.",
     "other": "Chương trình khác",
     "back": "Tất cả chương trình",
     "dayFormat": "Ngày {n}"
   },
   "gallery": {
     "title": "Hình ảnh",
-    "lead": "Khoảnh khắc từ các trại và tour giáo dục của chúng tôi.",
+    "lead": "Khoảnh khắc từ các chương trình, trại và hành trình của chúng tôi.",
     "all": "Tất cả",
     "camps": "Trại",
     "activities": "Hoạt động",
@@ -104,34 +278,43 @@
     "next": "Ảnh tiếp theo"
   },
   "contact": {
-    "title": "Liên hệ",
-    "lead": "Để biết chi tiết lịch trình hoặc chi phí, hãy liên hệ với chúng tôi — chúng tôi thường phản hồi trong vòng một ngày làm việc.",
+    "title": "Liên hệ NEXT",
+    "lead": "Bạn đang tìm đối tác điểm đến hay đội ngũ phát triển chương trình tiếp theo? Hãy cùng nhau kiến tạo.",
     "formTitle": "Gửi yêu cầu tư vấn",
     "name": "Họ và tên",
     "email": "Email",
-    "phone": "Điện thoại / Zalo",
-    "organization": "Trường / tổ chức",
+    "phone": "Điện thoại / WhatsApp",
+    "organization": "Công ty / trường / tổ chức",
     "country": "Quốc gia",
-    "program": "Chương trình quan tâm",
-    "programOther": "Chương trình riêng / khác",
+    "program": "Tôi quan tâm đến",
+    "programOther": "Khác",
     "participants": "Số người tham gia",
     "message": "Nội dung",
-    "messagePh": "Độ tuổi, thời gian mong muốn, mục tiêu…",
+    "messagePh": "Thông tin đoàn, người tham gia, mục tiêu, thời gian mong muốn…",
     "optional": "không bắt buộc",
     "submit": "Gửi yêu cầu",
     "sending": "Đang gửi…",
     "sent": "Cảm ơn bạn! Yêu cầu đã được gửi. Chúng tôi sẽ liên hệ lại sớm.",
-    "error": "Xin lỗi, đã có lỗi xảy ra. Vui lòng kiểm tra lại hoặc liên hệ trực tiếp qua email, Zalo.",
+    "error": "Xin lỗi, đã có lỗi xảy ra. Vui lòng kiểm tra lại biểu mẫu hoặc liên hệ trực tiếp qua email hoặc WhatsApp.",
     "errName": "Vui lòng nhập họ tên.",
     "errEmail": "Vui lòng nhập email hợp lệ.",
     "errMessage": "Vui lòng nhập nội dung ngắn.",
     "hotline": "Hotline",
     "chat": "WhatsApp · Zalo · Line · KakaoTalk",
     "emailLabel": "Email",
-    "offices": "Văn phòng"
+    "offices": "Văn phòng",
+    "options": {
+      "learn": "Learn – Giáo dục & Học tập trải nghiệm",
+      "explore": "Explore – Du lịch & Khám phá",
+      "connect": "Connect – Giao lưu văn hóa & Quốc tế",
+      "contribute": "Contribute – Cộng đồng & Phát triển bền vững",
+      "custom": "Chương trình thiết kế riêng",
+      "brochure": "Brochure 2027",
+      "partner": "Hợp tác B2B / white-label"
+    }
   },
   "footer": {
-    "about": "Trại hè & trại đông quốc tế tại Hội An – Đà Nẵng cho học sinh, sinh viên khắp thế giới.",
+    "about": "DMC chuyên biệt & Phát triển trải nghiệm. Du lịch giáo dục, văn hóa và trải nghiệm trên khắp Việt Nam.",
     "explore": "Khám phá",
     "contact": "Liên hệ",
     "rights": "Bảo lưu mọi quyền."

@@ -1,29 +1,71 @@
-<%- include('../partials/head', { title: t('nav.programs'), description: t('programs.lead'), image: 'golden-bridge' }) %>
-<%- include('../partials/page-hero', { bg: 'hoian-river', heading: t('programs.title'), lead: t('programs.lead'), eyebrow: '', crumbs: [{ label: t('nav.programs') }] }) %>
+<%- include('../partials/head', { title: t('nav.programs'), description: t('programs.lead'), image: 'hd/b30-sm' }) %>
+<%- include('../partials/page-hero', { bg: 'hd/b30', heading: t('programs.title'), lead: t('programs.lead'), eyebrow: t('programs.eyebrow'), crumbs: [{ label: t('nav.programs') }] }) %>
+<%
+const catImgs = {
+  learn: ['hd/d17', 'hd/d50', 'hd/a61'],
+  explore: ['hd/b30', 'hd/a2', 'hd/a14'],
+  connect: ['hd/d70', 'hd/c32', 'hd/d14'],
+  contribute: ['hd/d66', 'hd/c6', 'hd/c7'],
+};
+const catIcon = { learn: 'graduation-cap', explore: 'compass', connect: 'users', contribute: 'sprout' };
+%>
 
 <section class="section">
+  <div class="container split split-top">
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('programs.introEyebrow') %></p>
+      <h2><%= t('programs.introTitle') %></h2>
+      <% t('programs.intro').forEach((p, i) => { %><p class="<%= i === 0 ? 'lead-text' : '' %>"><%= p %></p><% }) %>
+    </div>
+    <div class="intro-mosaic reveal">
+      <%- include('../partials/pic', { name: 'hd/d103', alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+      <%- include('../partials/pic', { name: 'hd/b17', alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+      <%- include('../partials/pic', { name: 'hd/c26', alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+      <%- include('../partials/pic', { name: 'hd/c5', alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-featured">
   <div class="container">
-    <div class="program-list">
-      <% programs.forEach((p, i) => { %>
-      <article class="program-row reveal <%= i % 2 ? 'program-row-rev' : '' %>">
-        <a class="program-row-media" href="<%= url('/programs/' + p.slug) %>" tabindex="-1" aria-hidden="true">
-          <img src="/images/<%= p.cover %>.webp" alt="" loading="lazy" width="1176" height="691">
-          <span class="season-badge season-<%= p.season %>"><%- include('../partials/icon', { name: p.season === 'summer' ? 'sun' : 'snowflake', size: 16 }) %><%= L(p.theme).split('·')[0].trim() %></span>
-        </a>
-        <div class="program-row-body">
-          <p class="eyebrow"><%= L(p.theme) %></p>
-          <h2><a href="<%= url('/programs/' + p.slug) %>"><%= L(p.name) %></a></h2>
-          <p class="lead-text"><%= L(p.tagline) %></p>
-          <p><%= L(p.summary) %></p>
-          <dl class="fact-grid fact-grid-compact">
-            <% p.facts.forEach(f => { %>
-            <div><dt><%- include('../partials/icon', { name: f.icon, size: 18 }) %><%= L(f.label) %></dt><dd><%= L(f.value) %></dd></div>
-            <% }) %>
-          </dl>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="<%= url('/programs/' + p.slug) %>"><%= t('programs.details') %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
-            <a class="btn btn-outline" href="<%= url('/contact') %>?program=<%= p.slug %>"><%= t('nav.cta') %></a>
-          </div>
+    <div class="section-head">
+      <p class="eyebrow"><%= t('programs.featuredEyebrow') %></p>
+      <h2><%= t('programs.featuredTitle') %></h2>
+      <p><%= t('programs.featuredText') %></p>
+    </div>
+    <div class="program-grid">
+      <% programs.forEach(p => { %><%- include('../partials/program-card', { p }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('programs.categoriesEyebrow') %></p>
+      <h2><%= t('programs.categoriesTitle') %></h2>
+    </div>
+    <nav class="cat-tabs" aria-label="<%= t('programs.categoriesEyebrow') %>">
+      <% t('programs.categories').forEach(c => { %><a href="#<%= c.key %>"><%- include('../partials/icon', { name: catIcon[c.key], size: 18 }) %><%= c.name %></a><% }) %>
+    </nav>
+    <div class="cat-list">
+      <% t('programs.categories').forEach((c, i) => { const imgs = catImgs[c.key]; %>
+      <article class="cat-row reveal <%= i % 2 ? 'cat-row-rev' : '' %>" id="<%= c.key %>">
+        <div class="cat-media">
+          <%- include('../partials/pic', { name: imgs[0], cls: 'cat-media-main', alt: '' }) %>
+          <%- include('../partials/pic', { name: imgs[1], alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+          <%- include('../partials/pic', { name: imgs[2], alt: '', sizes: '(max-width: 900px) 50vw, 25vw' }) %>
+        </div>
+        <div class="cat-content">
+          <p class="cat-kicker"><span><%= String(i + 1).padStart(2, '0') %></span> <%= c.name %> — <%= c.label %></p>
+          <h3><%= c.title %></h3>
+          <% c.text.forEach(p => { %><p><%= p %></p><% }) %>
+          <p class="cat-includes"><%= t('programs.includes') %>:</p>
+          <ul class="tick-list">
+            <% c.list.forEach(it => { %><li><%- include('../partials/icon', { name: 'check', size: 16 }) %><span><%= it %></span></li><% }) %>
+          </ul>
+          <p class="cat-for"><%- include('../partials/icon', { name: 'users', size: 18 }) %><span><%= c.for %></span></p>
+          <a class="btn btn-primary" href="<%= url('/contact') %>?program=<%= c.key %>"><%= c.button %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
         </div>
       </article>
       <% }) %>
@@ -31,37 +73,77 @@
   </div>
 </section>
 
-<section class="section section-tint">
-  <div class="container split">
+<section class="section">
+  <div class="container split split-top">
     <div class="split-body reveal">
-      <p class="eyebrow"><%= t('programs.customTitle') %></p>
-      <h2><%= t('home.ctaTitle') %></h2>
-      <p class="lead-text"><%= t('programs.customText') %></p>
-      <p class="price-tag"><span><%= t('programs.priceFrom') %></span> <strong>300</strong> <span><%= t('programs.perWeek') %></span></p>
-      <a class="btn btn-primary" href="<%= url('/contact') %>?program=custom"><%= t('programs.customCta') %></a>
+      <p class="eyebrow"><%= t('programs.tailor.eyebrow') %></p>
+      <h2><%= t('programs.tailor.title') %></h2>
+      <% t('programs.tailor.text').forEach((p, i) => { %><p class="<%= i < 2 ? 'lead-text lead-tight' : '' %>"><%= p %></p><% }) %>
     </div>
-    <div class="segment-grid segment-grid-2 reveal">
-      <% site.segments.forEach(s => { %>
-      <figure class="segment">
-        <img src="/images/<%= s.image %>.webp" alt="" loading="lazy" width="800" height="600">
-        <figcaption><%= L(s.title) %></figcaption>
-      </figure>
+    <div class="split-media reveal">
+      <%- include('../partials/pic', { name: 'hd/d7', cls: 'rounded-img', alt: L({ en: 'Camp group on the beach in Da Nang', vi: 'Đoàn trại trên bãi biển Đà Nẵng' }) }) %>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="steps-title"><%= t('programs.tailor.howTitle') %></h3>
+    <ol class="steps">
+      <% t('programs.tailor.steps').forEach((s, i) => { %>
+      <li class="step reveal"><span class="step-num"><%= i + 1 %></span><h4><%= s.title %></h4><p><%= s.text %></p></li>
       <% }) %>
+    </ol>
+    <div class="inline-cta reveal">
+      <div>
+        <p class="eyebrow"><%= t('programs.tailor.ctaEyebrow') %></p>
+        <p class="inline-cta-title"><%= t('programs.tailor.ctaTitle') %></p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="<%= url('/contact') %>?program=custom"><%= t('programs.tailor.ctaButton') %> <%- include('../partials/icon', { name: 'arrow-right', size: 20 }) %></a>
+    </div>
+  </div>
+</section>
+
+<section class="section dest">
+  <div class="container split split-reverse">
+    <div class="split-body reveal">
+      <p class="eyebrow eyebrow-light"><%= t('programs.vietnam.eyebrow') %></p>
+      <h2><%= t('programs.vietnam.title') %></h2>
+      <% t('programs.vietnam.text').forEach((p, i) => { %><p class="<%= i === 0 ? 'lead-text' : '' %>"><%= p %></p><% }) %>
+    </div>
+    <div class="dest-mosaic reveal">
+      <%- include('../partials/pic', { name: 'hd/a31', alt: L({ en: 'Hoi An from above', vi: 'Hội An nhìn từ trên cao' }) }) %>
+      <%- include('../partials/pic', { name: 'hd/a14', sizes: '(max-width: 900px) 50vw, 25vw', alt: L({ en: 'Lantern shop in Hoi An', vi: 'Cửa hàng đèn lồng Hội An' }) }) %>
+      <%- include('../partials/pic', { name: 'hd/a2', sizes: '(max-width: 900px) 50vw, 25vw', alt: L({ en: 'Tasting local food', vi: 'Thưởng thức món ăn địa phương' }) }) %>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow"><%= t('home.diffEyebrow') %></p>
-      <h2><%= t('home.diffTitle') %></h2>
+  <div class="container split">
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('programs.world.eyebrow') %></p>
+      <h2><%= t('programs.world.title') %></h2>
+      <% const w = t('programs.world.text'); %>
+      <p class="lead-text"><%= w[0] %></p>
+      <p><%= w[1] %></p>
+      <p class="muted-label"><%= t('programs.world.destinationsLabel') %>:</p>
+      <ul class="country-list">
+        <% t('programs.world.destinations').forEach(c => { %><li><%= c %></li><% }) %>
+      </ul>
+      <p><%= w[2] %></p>
     </div>
-    <ul class="diff-grid">
-      <% site.difference.forEach((d, i) => { %>
-      <li class="diff reveal"><span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span><%- include('../partials/icon', { name: d.icon, size: 24 }) %><span><%= L(d) %></span></li>
-      <% }) %>
-    </ul>
+    <div class="network-photos reveal">
+      <%- include('../partials/pic', { name: 'tour-singapore', alt: L({ en: 'Student tour in Singapore', vi: 'Tour học sinh tại Singapore' }) }) %>
+      <%- include('../partials/pic', { name: 'tour-korea', alt: L({ en: 'Student tour abroad', vi: 'Tour học sinh nước ngoài' }) }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container inline-cta inline-cta-brochure reveal">
+    <div>
+      <p class="eyebrow"><%= t('programs.brochure.eyebrow') %></p>
+      <p class="inline-cta-title"><%= t('programs.brochure.text') %></p>
+    </div>
+    <a class="btn btn-primary btn-lg" href="<%= url('/contact') %>?program=brochure"><%= t('programs.brochure.button') %> <%- include('../partials/icon', { name: 'arrow-right', size: 20 }) %></a>
   </div>
 </section>
 

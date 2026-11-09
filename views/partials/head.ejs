@@ -1,11 +1,12 @@
 <%
-const pageTitle = typeof title !== 'undefined' && title ? `${title} | Next Education` : t('meta.title');
+const pageTitle = typeof title !== 'undefined' && title ? `${title} | NEXT` : t('meta.title');
 const pageDesc = typeof description !== 'undefined' && description ? description : t('meta.description');
-const ogImage = typeof image !== 'undefined' && image ? image : 'hero-group';
+const ogImage = typeof image !== 'undefined' && image ? image : 'hero-banner-sm';
 const navItems = [
   { key: 'home', href: url('/') },
   { key: 'about', href: url('/about') },
   { key: 'programs', href: url('/programs') },
+  { key: 'why', href: url('/why-next') },
   { key: 'gallery', href: url('/gallery') },
   { key: 'contact', href: url('/contact') },
 ];
@@ -20,7 +21,7 @@ const navItems = [
   <% alternates.forEach(a => { %><link rel="alternate" hreflang="<%= a.lang %>" href="<%= a.href %>">
   <% }) %><link rel="alternate" hreflang="x-default" href="<%= alternates[0].href %>">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Next Education">
+  <meta property="og:site_name" content="NEXT">
   <meta property="og:title" content="<%= pageTitle %>">
   <meta property="og:description" content="<%= pageDesc %>">
   <meta property="og:url" content="<%= canonical %>">
@@ -31,18 +32,18 @@ const navItems = [
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800<% if (langInfo.font) { %>&family=<%= langInfo.font %>:wght@400;500;700;800<% } %>&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=3">
+  <link rel="stylesheet" href="/css/styles.css?v=5">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Next Education","url":"https://www.next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
+  {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://www.next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
   </script>
 </head>
 <body class="page-<%= page %>">
 <a class="skip-link" href="#main"><%= t('nav.skip') %></a>
 <header class="site-header" data-header>
   <div class="container header-inner">
-    <a class="brand" href="<%= url('/') %>" aria-label="Next Education – <%= t('nav.home') %>">
-      <img src="/img/logo.png" alt="Next Education" width="128" height="56">
+    <a class="brand" href="<%= url('/') %>" aria-label="NEXT – <%= t('nav.home') %>">
+      <img src="/img/logo.png" alt="NEXT" width="128" height="56">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main">
       <ul>
