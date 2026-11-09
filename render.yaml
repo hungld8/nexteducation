@@ -1,0 +1,18 @@
+# Render Blueprint – free preview hosting (https://render.com)
+# Render > New > Blueprint > select this repo > Apply
+services:
+  - type: web
+    name: next-education
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /en
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "20"
+      # Optional – set in the Render dashboard to enable contact-form emails:
+      # SITE_URL, SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM, MAIL_TO

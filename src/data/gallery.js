@@ -1,0 +1,33 @@
+'use strict';
+
+// Photo gallery. `cat` is used for the filter buttons.
+module.exports = [
+  { src: 'hero-group', cat: 'camps', alt: { en: 'International campers group photo', vi: 'Trại viên quốc tế chụp ảnh tập thể' } },
+  { src: 'camp-kids-2', cat: 'camps', alt: { en: 'Happy campers', vi: 'Trại viên vui vẻ' } },
+  { src: 'camp-jungle', cat: 'camps', alt: { en: 'Campers on a field trip', vi: 'Trại viên trong chuyến tham quan' } },
+  { src: 'summer-outdoor-1', cat: 'activities', alt: { en: 'Morning exercise on the lawn', vi: 'Vận động buổi sáng trên bãi cỏ' } },
+  { src: 'camp-bana', cat: 'trips', alt: { en: 'Campers at Ba Na Hills', vi: 'Trại viên tại Bà Nà Hills' } },
+  { src: 'summer-craft-2', cat: 'activities', alt: { en: 'Hands-on craft workshop', vi: 'Workshop thủ công' } },
+  { src: 'golden-bridge', cat: 'destinations', alt: { en: 'Golden Bridge, Da Nang', vi: 'Cầu Vàng, Đà Nẵng' } },
+  { src: 'camp-group-banner', cat: 'camps', alt: { en: 'Global Camp opening', vi: 'Khai mạc Global Camp' } },
+  { src: 'hoian-lanterns', cat: 'destinations', alt: { en: 'Lanterns in Hoi An', vi: 'Đèn lồng Hội An' } },
+  { src: 'camp-kids-1', cat: 'camps', alt: { en: 'Campers taking a selfie', vi: 'Trại viên chụp ảnh selfie' } },
+  { src: 'summer-lantern', cat: 'activities', alt: { en: 'Lantern making in Hoi An', vi: 'Làm đèn lồng tại Hội An' } },
+  { src: 'camp-blue', cat: 'camps', alt: { en: 'Camp closing ceremony', vi: 'Lễ bế mạc trại' } },
+  { src: 'hoian-aerial', cat: 'destinations', alt: { en: 'Hoi An from above', vi: 'Hội An nhìn từ trên cao' } },
+  { src: 'tour-rafting', cat: 'trips', alt: { en: 'Rafting adventure', vi: 'Chèo thuyền vượt thác' } },
+  { src: 'camp-orange', cat: 'camps', alt: { en: 'Students at a partner school', vi: 'Học sinh tại trường đối tác' } },
+  { src: 'summer-outdoor-2', cat: 'activities', alt: { en: 'Outdoor games', vi: 'Trò chơi ngoài trời' } },
+  { src: 'tour-singapore', cat: 'trips', alt: { en: 'Student tour in Singapore', vi: 'Tour học sinh tại Singapore' } },
+  { src: 'camp-stage', cat: 'camps', alt: { en: 'Camp ceremony on stage', vi: 'Lễ trao chứng chỉ' } },
+  { src: 'hoian-river', cat: 'destinations', alt: { en: 'Thu Bon river, Hoi An', vi: 'Sông Thu Bồn, Hội An' } },
+  { src: 'camp-group-field', cat: 'activities', alt: { en: 'Team games on the field', vi: 'Trò chơi đồng đội' } },
+  { src: 'tour-lagoon', cat: 'trips', alt: { en: 'Water park trip', vi: 'Tham quan công viên nước' } },
+  { src: 'camp-group-3', cat: 'camps', alt: { en: 'Camp group photo', vi: 'Ảnh tập thể trại' } },
+  { src: 'about-beach', cat: 'trips', alt: { en: 'Campers by the beach', vi: 'Trại viên bên bờ biển' } },
+  { src: 'tour-korea', cat: 'trips', alt: { en: 'Palace visit in Korea', vi: 'Tham quan cung điện Hàn Quốc' } },
+  { src: 'camp-hall-2', cat: 'camps', alt: { en: 'Next Apitree camp', vi: 'Trại Next Apitree' } },
+  { src: 'food-mi-quang', cat: 'destinations', alt: { en: 'Mi Quang noodles', vi: 'Mì Quảng' } },
+  { src: 'camp-group-4', cat: 'camps', alt: { en: 'Campers in Hoi An', vi: 'Trại viên tại Hội An' } },
+  { src: 'about-group-1', cat: 'trips', alt: { en: 'Student tour group', vi: 'Đoàn tour học sinh' } },
+];

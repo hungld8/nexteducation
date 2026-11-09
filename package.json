@@ -1,0 +1,20 @@
+{
+  "name": "next-education-website",
+  "version": "1.0.0",
+  "description": "Next Education – International summer & winter camps in Hoi An – Da Nang, Vietnam (bilingual EN/VI website)",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  }
+}

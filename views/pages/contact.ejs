@@ -1,0 +1,86 @@
+<%- include('../partials/head', { title: t('nav.contact'), description: t('contact.lead'), image: 'hero-group' }) %>
+<%- include('../partials/page-hero', { bg: 'hoian-sunset', heading: t('contact.title'), lead: t('contact.lead'), eyebrow: '', crumbs: [{ label: t('nav.contact') }] }) %>
+
+<section class="section">
+  <div class="container contact-layout">
+    <div class="contact-form-wrap">
+      <h2><%= t('contact.formTitle') %></h2>
+      <div class="form-status" data-form-status role="status" aria-live="polite">
+        <% if (sent) { %><p class="alert alert-success"><%= t('contact.sent') %></p><% } %>
+        <% if (error) { %><p class="alert alert-error"><%= t('contact.error') %></p><% } %>
+      </div>
+      <form class="contact-form" method="post" action="<%= url('/contact') %>" novalidate data-contact-form
+            data-msg-sending="<%= t('contact.sending') %>" data-msg-sent="<%= t('contact.sent') %>" data-msg-error="<%= t('contact.error') %>">
+        <div class="field">
+          <label for="f-name"><%= t('contact.name') %> <span class="req" aria-hidden="true">*</span></label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="e-name">
+          <p class="field-error" id="e-name" hidden><%= t('contact.errName') %></p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-email"><%= t('contact.email') %> <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email">
+            <p class="field-error" id="e-email" hidden><%= t('contact.errEmail') %></p>
+          </div>
+          <div class="field">
+            <label for="f-phone"><%= t('contact.phone') %> <small>(<%= t('contact.optional') %>)</small></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-org"><%= t('contact.organization') %> <small>(<%= t('contact.optional') %>)</small></label>
+            <input id="f-org" name="organization" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-country"><%= t('contact.country') %> <small>(<%= t('contact.optional') %>)</small></label>
+            <input id="f-country" name="country" type="text" autocomplete="country-name">
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-program"><%= t('contact.program') %></label>
+            <select id="f-program" name="program">
+              <% programs.forEach(p => { %><option value="<%= L(p.name) %> (<%= L(p.theme) %>)" <%= selected === p.slug ? 'selected' : '' %>><%= L(p.name) %> – <%= L(p.theme).split('·')[0].trim() %></option><% }) %>
+              <option value="<%= t('contact.programOther') %>" <%= selected === 'custom' ? 'selected' : '' %>><%= t('contact.programOther') %></option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-participants"><%= t('contact.participants') %> <small>(<%= t('contact.optional') %>)</small></label>
+            <input id="f-participants" name="participants" type="number" min="1" max="2000" inputmode="numeric">
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message"><%= t('contact.message') %> <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="f-message" name="message" rows="5" required placeholder="<%= t('contact.messagePh') %>" aria-describedby="e-message"></textarea>
+          <p class="field-error" id="e-message" hidden><%= t('contact.errMessage') %></p>
+        </div>
+        <div class="hp" aria-hidden="true"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-primary btn-lg" type="submit" data-submit><%- include('../partials/icon', { name: 'send', size: 18 }) %> <span><%= t('contact.submit') %></span></button>
+      </form>
+    </div>
+
+    <aside class="contact-info">
+      <div class="info-card">
+        <h3><%- include('../partials/icon', { name: 'phone', size: 20 }) %> <%= t('contact.hotline') %></h3>
+        <p><a class="info-big" href="<%= site.hotlineHref %>"><%= site.hotline %></a><br><span class="muted"><%= site.contactPerson %> · <%= t('contact.chat') %></span></p>
+        <div class="btn-row">
+          <a class="btn btn-sm btn-outline" href="<%= site.whatsapp %>" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-sm btn-outline" href="<%= site.zalo %>" target="_blank" rel="noopener">Zalo</a>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3><%- include('../partials/icon', { name: 'mail', size: 20 }) %> <%= t('contact.emailLabel') %></h3>
+        <p><a class="info-big" href="mailto:<%= site.email %>"><%= site.email %></a></p>
+      </div>
+      <div class="info-card">
+        <h3><%- include('../partials/icon', { name: 'map-pin', size: 20 }) %> <%= t('contact.offices') %></h3>
+        <ul class="office-list">
+          <% site.offices.forEach(o => { %><li><strong><%= L(o.city) %></strong><span><%= L(o.address) %></span></li><% }) %>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<%- include('../partials/foot') %>

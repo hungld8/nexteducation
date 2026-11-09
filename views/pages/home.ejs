@@ -1,0 +1,159 @@
+<%- include('../partials/head', { title: '', description: '', image: 'hero-banner-sm' }) %>
+
+<section class="hero">
+  <div class="hero-media" aria-hidden="true">
+    <img src="/images/hero-banner.webp" srcset="/images/hero-banner-sm.webp 1200w, /images/hero-banner.webp 2400w" sizes="100vw" alt="" width="2400" height="1601" fetchpriority="high">
+  </div>
+  <div class="container hero-content">
+    <p class="eyebrow eyebrow-light"><%= t('home.eyebrow') %></p>
+    <h1><%- t('home.title') %></h1>
+    <p class="hero-lead"><%= t('home.lead') %></p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="<%= url('/programs') %>"><%= t('home.ctaPrimary') %> <%- include('../partials/icon', { name: 'arrow-right', size: 20 }) %></a>
+      <a class="btn btn-ghost-light btn-lg" href="<%= url('/contact') %>"><%= t('home.ctaSecondary') %></a>
+    </div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Next Education">
+  <div class="container"><div class="stats-grid">
+    <% site.stats.forEach(s => { %>
+    <div class="stat">
+      <p class="stat-value"><% if (s.display) { %><%= L(s.display) %><% } else { %><span data-count="<%= s.value %>"><%= s.value %></span><%= s.suffix %><% } %></p>
+      <p class="stat-label"><%= L(s.label) %></p>
+    </div>
+    <% }) %>
+  </div></div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-media reveal">
+      <div class="photo-stack">
+        <img class="ps-main" src="/images/about-group-1.webp" alt="<%= lang === 'vi' ? 'Đoàn học sinh quốc tế của Next Education' : 'Next Education international student group' %>" loading="lazy" width="995" height="728">
+        <img class="ps-sub" src="/images/summer-lantern.webp" alt="<%= lang === 'vi' ? 'Trại viên làm đèn lồng tại Hội An' : 'Campers making lanterns in Hoi An' %>" loading="lazy" width="338" height="359">
+      </div>
+    </div>
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('home.aboutEyebrow') %></p>
+      <h2><%= t('home.aboutTitle') %></h2>
+      <p class="lead-text"><%= t('home.aboutText') %></p>
+      <ul class="check-list">
+        <% site.whyUs.slice(0, 3).forEach(w => { %>
+        <li><%- include('../partials/icon', { name: 'check', size: 18 }) %><span><strong><%= L(w.title) %></strong></span></li>
+        <% }) %>
+      </ul>
+      <a class="link-arrow" href="<%= url('/about') %>"><%= t('home.aboutLink') %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.programsEyebrow') %></p>
+      <h2><%= t('home.programsTitle') %></h2>
+      <p><%= t('home.programsText') %></p>
+    </div>
+    <div class="program-grid">
+      <% programs.forEach(p => { %><%- include('../partials/program-card', { p }) %><% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.whyEyebrow') %></p>
+      <h2><%= t('home.whyTitle') %></h2>
+    </div>
+    <div class="feature-grid">
+      <% site.whyUs.forEach((w, i) => { %>
+      <article class="feature reveal">
+        <span class="feature-icon"><%- include('../partials/icon', { name: w.icon, size: 26 }) %></span>
+        <h3><%= L(w.title) %></h3>
+        <p><%= L(w.text) %></p>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section dest">
+  <div class="container split split-reverse">
+    <div class="split-body reveal">
+      <p class="eyebrow eyebrow-light"><%= t('home.destEyebrow') %></p>
+      <h2><%= t('home.destTitle') %></h2>
+      <p class="lead-text"><%= t('home.destText') %></p>
+      <ul class="check-list check-list-light">
+        <% t('home.dest').forEach(d => { %><li><%- include('../partials/icon', { name: 'map-pin', size: 18 }) %><span><%= d %></span></li><% }) %>
+      </ul>
+    </div>
+    <div class="dest-mosaic reveal">
+      <img src="/images/hoian-aerial.webp" alt="<%= lang === 'vi' ? 'Hội An nhìn từ trên cao' : 'Hoi An from above' %>" loading="lazy" width="1175" height="691">
+      <img src="/images/golden-bridge.webp" alt="<%= lang === 'vi' ? 'Cầu Vàng, Bà Nà Hills' : 'Golden Bridge, Ba Na Hills' %>" loading="lazy" width="1176" height="691">
+      <img src="/images/hoian-lanterns.webp" alt="<%= lang === 'vi' ? 'Đèn lồng phố cổ Hội An' : 'Lanterns in Hoi An Ancient Town' %>" loading="lazy" width="964" height="530">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.diffEyebrow') %></p>
+      <h2><%= t('home.diffTitle') %></h2>
+    </div>
+    <ul class="diff-grid">
+      <% site.difference.forEach((d, i) => { %>
+      <li class="diff reveal">
+        <span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span>
+        <%- include('../partials/icon', { name: d.icon, size: 24 }) %>
+        <span><%= d[lang] %></span>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head section-head-row">
+      <div>
+        <p class="eyebrow"><%= t('home.galleryEyebrow') %></p>
+        <h2><%= t('home.galleryTitle') %></h2>
+      </div>
+      <a class="link-arrow" href="<%= url('/gallery') %>"><%= t('home.galleryLink') %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
+    </div>
+    <div class="gallery-strip" data-gallery>
+      <% gallery.slice(0, 8).forEach((g, i) => { %>
+      <button type="button" class="gallery-item gi-<%= i %>" data-lb-src="/images/<%= g.src %>.webp" data-lb-alt="<%= L(g.alt) %>">
+        <img src="/images/<%= g.src %>.webp" alt="<%= L(g.alt) %>" loading="lazy" width="600" height="450">
+      </button>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.testiEyebrow') %></p>
+      <h2><%= t('home.testiTitle') %></h2>
+    </div>
+    <div class="testi-grid">
+      <% site.testimonials.forEach(tm => { %>
+      <figure class="testi reveal">
+        <%- include('../partials/icon', { name: 'quote', size: 28, className: 'icon testi-quote' }) %>
+        <blockquote><p><%= L(tm.text) %></p></blockquote>
+        <figcaption>
+          <span class="testi-avatar" aria-hidden="true"><%= tm.name.replace(/^(Mr\.|Ms\.)\s*/, '').charAt(0) %></span>
+          <span><strong><%= tm.name %></strong><small><%= L(tm.role) %></small></span>
+        </figcaption>
+      </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>

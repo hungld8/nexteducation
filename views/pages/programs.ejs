@@ -1,0 +1,69 @@
+<%- include('../partials/head', { title: t('nav.programs'), description: t('programs.lead'), image: 'golden-bridge' }) %>
+<%- include('../partials/page-hero', { bg: 'hoian-river', heading: t('programs.title'), lead: t('programs.lead'), eyebrow: '', crumbs: [{ label: t('nav.programs') }] }) %>
+
+<section class="section">
+  <div class="container">
+    <div class="program-list">
+      <% programs.forEach((p, i) => { %>
+      <article class="program-row reveal <%= i % 2 ? 'program-row-rev' : '' %>">
+        <a class="program-row-media" href="<%= url('/programs/' + p.slug) %>" tabindex="-1" aria-hidden="true">
+          <img src="/images/<%= p.cover %>.webp" alt="" loading="lazy" width="1176" height="691">
+          <span class="season-badge season-<%= p.season %>"><%- include('../partials/icon', { name: p.season === 'summer' ? 'sun' : 'snowflake', size: 16 }) %><%= L(p.theme).split('·')[0].trim() %></span>
+        </a>
+        <div class="program-row-body">
+          <p class="eyebrow"><%= L(p.theme) %></p>
+          <h2><a href="<%= url('/programs/' + p.slug) %>"><%= L(p.name) %></a></h2>
+          <p class="lead-text"><%= L(p.tagline) %></p>
+          <p><%= L(p.summary) %></p>
+          <dl class="fact-grid fact-grid-compact">
+            <% p.facts.forEach(f => { %>
+            <div><dt><%- include('../partials/icon', { name: f.icon, size: 18 }) %><%= L(f.label) %></dt><dd><%= L(f.value) %></dd></div>
+            <% }) %>
+          </dl>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="<%= url('/programs/' + p.slug) %>"><%= t('programs.details') %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
+            <a class="btn btn-outline" href="<%= url('/contact') %>?program=<%= p.slug %>"><%= t('nav.cta') %></a>
+          </div>
+        </div>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container split">
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('programs.customTitle') %></p>
+      <h2><%= t('home.ctaTitle') %></h2>
+      <p class="lead-text"><%= t('programs.customText') %></p>
+      <p class="price-tag"><span><%= t('programs.priceFrom') %></span> <strong>300</strong> <span><%= t('programs.perWeek') %></span></p>
+      <a class="btn btn-primary" href="<%= url('/contact') %>?program=custom"><%= t('programs.customCta') %></a>
+    </div>
+    <div class="segment-grid segment-grid-2 reveal">
+      <% site.segments.forEach(s => { %>
+      <figure class="segment">
+        <img src="/images/<%= s.image %>.webp" alt="" loading="lazy" width="800" height="600">
+        <figcaption><%= L(s.title) %></figcaption>
+      </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.diffEyebrow') %></p>
+      <h2><%= t('home.diffTitle') %></h2>
+    </div>
+    <ul class="diff-grid">
+      <% site.difference.forEach((d, i) => { %>
+      <li class="diff reveal"><span class="diff-num"><%= String(i + 1).padStart(2, '0') %></span><%- include('../partials/icon', { name: d.icon, size: 24 }) %><span><%= d[lang] %></span></li>
+      <% }) %>
+    </ul>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>

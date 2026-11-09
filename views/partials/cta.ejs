@@ -1,0 +1,12 @@
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2><%= t('home.ctaTitle') %></h2>
+      <p><%= t('home.ctaText') %></p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-white btn-lg" href="<%= url('/contact') %>"><%= t('home.ctaButton') %> <%- include('icon', { name: 'arrow-right', size: 20 }) %></a>
+      <a class="cta-phone" href="<%= site.hotlineHref %>"><%- include('icon', { name: 'phone', size: 18 }) %> <%= site.hotline %></a>
+    </div>
+  </div>
+</section>

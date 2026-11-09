@@ -1,0 +1,114 @@
+<%- include('../partials/head', { title: L(program.name) + ' – ' + L(program.theme), description: L(program.summary), image: program.cover }) %>
+<%- include('../partials/page-hero', { bg: program.hero, heading: L(program.name), lead: L(program.tagline), eyebrow: L(program.theme), crumbs: [{ label: t('nav.programs'), href: url('/programs') }, { label: L(program.name) }] }) %>
+
+<section class="facts-bar">
+  <div class="container">
+    <dl class="fact-grid">
+      <% program.facts.forEach(f => { %>
+      <div><dt><%- include('../partials/icon', { name: f.icon, size: 20 }) %><%= L(f.label) %></dt><dd><%= L(f.value) %></dd></div>
+      <% }) %>
+    </dl>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container program-layout">
+    <div class="program-main">
+      <div class="reveal">
+        <p class="eyebrow"><%= t('program.overview') %></p>
+        <h2><%= L(program.name) %></h2>
+        <p class="lead-text"><%= L(program.summary) %></p>
+        <p><%= L(program.intro) %></p>
+      </div>
+
+      <h2 class="h-section"><%= t('program.highlights') %></h2>
+      <div class="highlight-grid">
+        <% program.highlights.forEach(h => { %>
+        <article class="highlight reveal">
+          <span class="feature-icon"><%- include('../partials/icon', { name: h.icon, size: 24 }) %></span>
+          <h3><%= L(h.title) %></h3>
+          <p><%= L(h.text) %></p>
+        </article>
+        <% }) %>
+      </div>
+
+      <h2 class="h-section"><%= t('program.itinerary') %></h2>
+      <div class="itinerary">
+        <% program.itinerary.forEach((d, i) => { %>
+        <details class="day reveal" <% if (i === 0) { %>open<% } %>>
+          <summary>
+            <span class="day-num"><%= typeof d.day === 'number' ? t('program.day') + ' ' + d.day : L(d.day) %></span>
+            <span class="day-title"><%= L(d.title) %></span>
+            <%- include('../partials/icon', { name: 'chevron-down', size: 20, className: 'icon day-chevron' }) %>
+          </summary>
+          <div class="day-body">
+            <ul><% L(d.items).forEach(it => { %><li><%= it %></li><% }) %></ul>
+            <p class="day-skill"><strong><%= t('program.skills') %>:</strong> <%= L(d.skill) %></p>
+          </div>
+        </details>
+        <% }) %>
+      </div>
+
+      <h2 class="h-section"><%= t('program.schedule') %></h2>
+      <ol class="schedule reveal">
+        <% program.schedule.forEach(s => { %><li><time><%= s[0] %></time><span><%= L(s[1]) %></span></li><% }) %>
+      </ol>
+    </div>
+
+    <aside class="program-aside">
+      <div class="aside-card">
+        <h2><%= t('program.included') %></h2>
+        <ul class="check-list">
+          <% program.included.forEach(it => { %><li><%- include('../partials/icon', { name: 'check', size: 18 }) %><span><%= L(it) %></span></li><% }) %>
+        </ul>
+        <p class="aside-note"><%= t('program.datesNote') %></p>
+        <a class="btn btn-primary btn-block" href="<%= url('/contact') %>?program=<%= program.slug %>"><%= t('program.enquire') %></a>
+        <a class="btn btn-outline btn-block" href="<%= site.mediaLink %>" target="_blank" rel="noopener"><%- include('../partials/icon', { name: 'image', size: 18 }) %> <%= t('program.brochure') %></a>
+        <a class="aside-phone" href="<%= site.hotlineHref %>"><%- include('../partials/icon', { name: 'phone', size: 18 }) %> <%= site.hotline %> (<%= site.contactPerson %>)</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head"><h2><%= t('program.venues') %></h2></div>
+    <% program.venues.forEach(v => { %>
+    <div class="venue">
+      <h3><%= L(v.name) %></h3>
+      <div class="venue-grid" data-gallery>
+        <% v.images.forEach((img, i) => { %>
+        <button type="button" class="gallery-item <%= i === 0 ? 'venue-lead' : '' %>" data-lb-src="/images/<%= img %>.webp" data-lb-alt="<%= L(v.name) %>">
+          <img src="/images/<%= img %>.webp" alt="<%= L(v.name) %>" loading="lazy" width="600" height="450">
+        </button>
+        <% }) %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2><%= t('program.photos') %></h2></div>
+    <div class="photo-row" data-gallery>
+      <% program.gallery.forEach(img => { %>
+      <button type="button" class="gallery-item" data-lb-src="/images/<%= img %>.webp" data-lb-alt="<%= L(program.name) %>">
+        <img src="/images/<%= img %>.webp" alt="<%= L(program.name) %>" loading="lazy" width="600" height="450">
+      </button>
+      <% }) %>
+    </div>
+    <% const others = programs.filter(p => p.slug !== program.slug); if (others.length) { %>
+    <div class="section-head section-head-row other-head">
+      <h2><%= t('program.other') %></h2>
+      <a class="link-arrow" href="<%= url('/programs') %>"><%= t('program.back') %> <%- include('../partials/icon', { name: 'arrow-right', size: 18 }) %></a>
+    </div>
+    <div class="program-grid program-grid-single">
+      <% others.forEach(p => { %><%- include('../partials/program-card', { p }) %><% }) %>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>

@@ -1,0 +1,70 @@
+<%
+const pageTitle = typeof title !== 'undefined' && title ? `${title} | Next Education` : t('meta.title');
+const pageDesc = typeof description !== 'undefined' && description ? description : t('meta.description');
+const ogImage = typeof image !== 'undefined' && image ? image : 'hero-group';
+const navItems = [
+  { key: 'home', href: url('/') },
+  { key: 'about', href: url('/about') },
+  { key: 'programs', href: url('/programs') },
+  { key: 'gallery', href: url('/gallery') },
+  { key: 'contact', href: url('/contact') },
+];
+%><!doctype html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= pageTitle %></title>
+  <meta name="description" content="<%= pageDesc %>">
+  <link rel="canonical" href="<%= canonical %>">
+  <% alternates.forEach(a => { %><link rel="alternate" hreflang="<%= a.lang %>" href="<%= a.href %>">
+  <% }) %><link rel="alternate" hreflang="x-default" href="<%= alternates[0].href %>">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Next Education">
+  <meta property="og:title" content="<%= pageTitle %>">
+  <meta property="og:description" content="<%= pageDesc %>">
+  <meta property="og:url" content="<%= canonical %>">
+  <meta property="og:image" content="/images/<%= ogImage %>.webp">
+  <meta property="og:locale" content="<%= lang === 'vi' ? 'vi_VN' : 'en_US' %>">
+  <meta name="theme-color" content="#2E7016">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=2">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Next Education","url":"https://www.next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
+  </script>
+</head>
+<body class="page-<%= page %>">
+<a class="skip-link" href="#main"><%= t('nav.skip') %></a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="<%= url('/') %>" aria-label="Next Education – <%= t('nav.home') %>">
+      <img src="/img/logo.png" alt="Next Education" width="128" height="56">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <ul>
+        <% navItems.forEach(item => { %>
+        <li><a href="<%= item.href %>" <% if (page === item.key) { %>aria-current="page"<% } %>><%= t('nav.' + item.key) %></a></li>
+        <% }) %>
+      </ul>
+      <div class="nav-mobile-extra">
+        <a class="btn btn-primary btn-block" href="<%= url('/contact') %>"><%= t('nav.cta') %></a>
+        <a class="nav-phone" href="<%= site.hotlineHref %>"><%- include('icon', { name: 'phone', size: 18 }) %> <%= site.hotline %></a>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <a class="lang-switch" href="<%= switchUrl %>" hreflang="<%= otherLang %>" lang="<%= otherLang %>" aria-label="<%= t('nav.switchLabel') %>">
+        <%- include('icon', { name: 'languages', size: 18 }) %><span><%= otherLang.toUpperCase() %></span>
+      </a>
+      <a class="btn btn-primary btn-sm header-cta" href="<%= url('/contact') %>"><%= t('nav.cta') %></a>
+      <button class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-open-label="<%= t('nav.menu') %>" data-close-label="<%= t('nav.close') %>" aria-label="<%= t('nav.menu') %>">
+        <span class="nav-toggle-open"><%- include('icon', { name: 'menu' }) %></span>
+        <span class="nav-toggle-close"><%- include('icon', { name: 'x' }) %></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main">

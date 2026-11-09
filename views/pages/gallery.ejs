@@ -1,0 +1,25 @@
+<%- include('../partials/head', { title: t('nav.gallery'), description: t('gallery.lead'), image: 'camp-group-banner' }) %>
+<%- include('../partials/page-hero', { bg: 'camp-bana', heading: t('gallery.title'), lead: t('gallery.lead'), eyebrow: '', crumbs: [{ label: t('nav.gallery') }] }) %>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" role="group" aria-label="<%= t('gallery.title') %>">
+      <% ['all', 'camps', 'activities', 'trips', 'destinations'].forEach((c, i) => { %>
+      <button type="button" class="filter-btn" data-filter="<%= c %>" aria-pressed="<%= i === 0 ? 'true' : 'false' %>"><%= t('gallery.' + c) %></button>
+      <% }) %>
+    </div>
+    <div class="masonry" data-gallery>
+      <% gallery.forEach(g => { %>
+      <button type="button" class="gallery-item masonry-item" data-cat="<%= g.cat %>" data-lb-src="/images/<%= g.src %>.webp" data-lb-alt="<%= L(g.alt) %>">
+        <img src="/images/<%= g.src %>.webp" alt="<%= L(g.alt) %>" loading="lazy">
+      </button>
+      <% }) %>
+    </div>
+    <div class="center-row">
+      <a class="btn btn-outline" href="<%= site.mediaLink %>" target="_blank" rel="noopener"><%= t('gallery.more') %> <%- include('../partials/icon', { name: 'external', size: 18 }) %></a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>

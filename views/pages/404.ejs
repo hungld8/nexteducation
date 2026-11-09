@@ -1,0 +1,10 @@
+<%- include('../partials/head', { title: t('notFound.title'), description: t('notFound.text'), image: '' }) %>
+<section class="section notfound">
+  <div class="container">
+    <p class="nf-code">404</p>
+    <h1><%= t('notFound.title') %></h1>
+    <p><%= t('notFound.text') %></p>
+    <a class="btn btn-primary" href="<%= url('/') %>"><%- include('../partials/icon', { name: 'arrow-left', size: 18 }) %> <%= t('notFound.back') %></a>
+  </div>
+</section>
+<%- include('../partials/foot') %>

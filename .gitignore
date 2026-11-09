@@ -1,0 +1,9 @@
+node_modules/
+.env
+.DS_Store
+npm-debug.log*
+*.log
+
+# Original source photos (optimized copies live in public/images)
+banner1.jpg
+.claude/

@@ -1,0 +1,20 @@
+<article class="program-card reveal">
+  <a class="program-card-media" href="<%= url('/programs/' + p.slug) %>" tabindex="-1" aria-hidden="true">
+    <img src="/images/<%= p.cover %>.webp" alt="" loading="lazy" width="800" height="560">
+    <span class="season-badge season-<%= p.season %>">
+      <%- include('icon', { name: p.season === 'summer' ? 'sun' : 'snowflake', size: 16 }) %>
+      <%= L(p.theme).split('·')[0].trim() %>
+    </span>
+  </a>
+  <div class="program-card-body">
+    <p class="eyebrow"><%= L(p.theme) %></p>
+    <h3><a href="<%= url('/programs/' + p.slug) %>"><%= L(p.name) %></a></h3>
+    <p><%= L(p.tagline) %></p>
+    <ul class="fact-chips">
+      <% p.facts.forEach(f => { if (f.icon === 'calendar') return; %>
+      <li><%- include('icon', { name: f.icon, size: 16 }) %><%= L(f.value) %></li>
+      <% }) %>
+    </ul>
+    <a class="link-arrow" href="<%= url('/programs/' + p.slug) %>"><%= t('programs.details') %> <%- include('icon', { name: 'arrow-right', size: 18 }) %></a>
+  </div>
+</article>

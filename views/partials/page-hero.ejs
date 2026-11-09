@@ -1,0 +1,16 @@
+<section class="page-hero">
+  <div class="page-hero-media" aria-hidden="true"><img src="/images/<%= bg %>.webp" alt="" width="1600" height="900"></div>
+  <div class="container page-hero-content">
+    <% if (typeof crumbs !== 'undefined') { %>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="<%= url('/') %>"><%= t('nav.home') %></a></li>
+        <% crumbs.forEach(c => { %><li><% if (c.href) { %><a href="<%= c.href %>"><%= c.label %></a><% } else { %><span aria-current="page"><%= c.label %></span><% } %></li><% }) %>
+      </ol>
+    </nav>
+    <% } %>
+    <% if (typeof eyebrow !== 'undefined' && eyebrow) { %><p class="eyebrow eyebrow-light"><%= eyebrow %></p><% } %>
+    <h1><%= heading %></h1>
+    <% if (typeof lead !== 'undefined' && lead) { %><p class="page-hero-lead"><%= lead %></p><% } %>
+  </div>
+</section>

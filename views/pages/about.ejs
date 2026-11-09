@@ -1,0 +1,106 @@
+<%- include('../partials/head', { title: t('nav.about'), description: t('about.story1'), image: 'about-group-2' }) %>
+<%- include('../partials/page-hero', { bg: 'about-group-2', heading: t('about.title'), lead: t('about.lead'), eyebrow: '', crumbs: [{ label: t('nav.about') }] }) %>
+
+<section class="section">
+  <div class="container split">
+    <div class="split-body reveal">
+      <p class="eyebrow"><%= t('about.storyTitle') %></p>
+      <h2><%= t('home.aboutTitle') %></h2>
+      <p class="lead-text"><%= t('about.story1') %></p>
+      <p><%= t('about.story2') %></p>
+    </div>
+    <div class="split-media reveal">
+      <div class="photo-stack">
+        <img class="ps-main" src="/images/about-beach.webp" alt="<%= lang === 'vi' ? 'Đoàn học sinh bên bờ biển' : 'Student group by the beach' %>" loading="lazy" width="943" height="934">
+        <img class="ps-sub" src="/images/summer-craft-2.webp" alt="<%= lang === 'vi' ? 'Học sinh trong hoạt động thủ công' : 'Students in a craft workshop' %>" loading="lazy" width="423" height="441">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats stats-inline" aria-label="Next Education">
+  <div class="container"><div class="stats-grid">
+    <% site.stats.forEach(s => { %>
+    <div class="stat">
+      <p class="stat-value"><% if (s.display) { %><%= L(s.display) %><% } else { %><span data-count="<%= s.value %>"><%= s.value %></span><%= s.suffix %><% } %></p>
+      <p class="stat-label"><%= L(s.label) %></p>
+    </div>
+    <% }) %>
+  </div></div>
+</section>
+
+<section class="section">
+  <div class="container mission reveal">
+    <%- include('../partials/icon', { name: 'sprout', size: 40, className: 'icon mission-icon' }) %>
+    <p class="eyebrow"><%= t('about.missionTitle') %></p>
+    <p class="mission-text"><%= t('about.story3') %></p>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow"><%= t('home.whyEyebrow') %></p>
+      <h2><%= t('home.whyTitle') %></h2>
+    </div>
+    <div class="feature-grid">
+      <% site.whyUs.forEach(w => { %>
+      <article class="feature reveal">
+        <span class="feature-icon"><%- include('../partials/icon', { name: w.icon, size: 26 }) %></span>
+        <h3><%= L(w.title) %></h3>
+        <p><%= L(w.text) %></p>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2><%= t('about.segmentsTitle') %></h2>
+    </div>
+    <div class="segment-grid">
+      <% site.segments.forEach(s => { %>
+      <figure class="segment reveal">
+        <img src="/images/<%= s.image %>.webp" alt="" loading="lazy" width="800" height="600">
+        <figcaption><%= L(s.title) %></figcaption>
+      </figure>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container split">
+    <div class="split-body reveal">
+      <h2><%= t('about.networkTitle') %></h2>
+      <p class="lead-text"><%= t('about.networkText') %></p>
+      <ul class="country-list">
+        <% site.countries.forEach(c => { %><li><%= L(c) %></li><% }) %>
+      </ul>
+    </div>
+    <div class="network-photos reveal">
+      <img src="/images/tour-singapore.webp" alt="<%= lang === 'vi' ? 'Tour học sinh tại Singapore' : 'Student tour in Singapore' %>" loading="lazy" width="967" height="708">
+      <img src="/images/tour-korea.webp" alt="<%= lang === 'vi' ? 'Tham quan cung điện tại Hàn Quốc' : 'Palace visit in Korea' %>" loading="lazy" width="1060" height="700">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><h2><%= t('about.officesTitle') %></h2></div>
+    <div class="office-grid">
+      <% site.offices.forEach(o => { %>
+      <article class="office reveal">
+        <%- include('../partials/icon', { name: 'map-pin', size: 24 }) %>
+        <h3><%= L(o.city) %></h3>
+        <p><%= L(o.address) %></p>
+      </article>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/cta') %>
+<%- include('../partials/foot') %>
