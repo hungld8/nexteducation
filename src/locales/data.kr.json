@@ -42,7 +42,7 @@
   "USA": "미국",
   "Canada": "캐나다",
   "Student · Taiwan": "학생 · 대만",
-  "NEXT Education’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXT Education의 여름 캠프는 정말 인생을 바꾼 경험이었어요. 즐거운 활동과 학습의 균형이 완벽했고, 평생 갈 친구들을 사귀었습니다.",
+  "NEXT’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXT의 여름 캠프는 정말 인생을 바꾼 경험이었어요. 즐거운 활동과 학습의 균형이 완벽했고, 평생 갈 친구들을 사귀었습니다.",
   "Student · Korea": "학생 · 한국",
   "The Sustainability camp was fantastic! We learned to make eco‑friendly products and visited sustainable farms. I left motivated to do more for the environment.": "지속가능성 캠프는 정말 최고였어요! 친환경 제품을 직접 만들고 지속가능한 농장도 방문했습니다. 환경을 위해 더 많은 일을 하고 싶다는 동기를 얻고 돌아왔어요.",
   "Partner · Next Apitree": "파트너 · Next Apitree",
@@ -178,7 +178,6 @@
   "Evening activity": "저녁 활동",
   "Roll call": "인원 점검",
   "Learning · Skyline Hill International School Hoi An": "학습 · 스카이라인 힐 국제학교 호이안",
-  "Accommodation · Mood Hoi An Riverside Resort & Spa": "숙소 · 무드 호이안 리버사이드 리조트 & 스파",
   "Food · Vietnamese & international cuisine": "식사 · 베트남 & 세계 요리",
   "International campers group photo": "국제 캠프 참가자 단체 사진",
   "Happy campers": "즐거운 캠프 참가자들",
@@ -210,7 +209,7 @@
   "Student tour group": "학생 투어 단체",
   "Student group by the beach": "해변의 학생 단체",
   "Students in a craft workshop": "공예 워크숍에 참여한 학생들",
-  "Next Education international student group": "Next Education 국제 학생 단체",
+  "NEXT international student group": "NEXT 국제 학생 단체",
   "Campers making lanterns in Hoi An": "호이안에서 등불을 만드는 참가자들",
   "Golden Bridge, Ba Na Hills": "골든 브리지, 바나힐",
   "Lanterns in Hoi An Ancient Town": "호이안 구시가지의 등불",
@@ -226,5 +225,10 @@
   "Camp group on the beach in Da Nang": "다낭 해변의 캠프 단체",
   "Lantern shop in Hoi An": "호이안의 등불 가게",
   "Tasting local food": "현지 음식 맛보기",
-  "Student tour abroad": "해외 학생 투어"
+  "Student tour abroad": "해외 학생 투어",
+  "Accommodation": "숙소",
+  "Mentor and students working together": "멘토와 함께 활동하는 학생들",
+  "Introduction": "소개",
+  "Camp highlights": "캠프 하이라이트",
+  "Camp activities": "캠프 활동"
 }

@@ -39,7 +39,7 @@
       "We work with international travel brands, schools and organizations to design, develop and deliver customized programs across Vietnam.",
       "Combining local expertise, thoughtful program design and a trusted partner network, we turn ideas into meaningful journeys and real-world experiences."
     ],
-    "tagline": "Explore. Connect. Contribute.",
+    "tagline": "Learn. Explore. Connect. Contribute.",
     "introLink": "More about NEXT",
     "programsEyebrow": "Our programs",
     "programsTitle": "Experiences with Purpose. Learning with Impact.",
@@ -115,7 +115,8 @@
         "By working together, we bring local knowledge to life and create stronger connections between our partners and the destinations they explore."
       ]
     },
-    "officesTitle": "Our offices"
+    "officesTitle": "Our offices",
+    "partnersTitle": "Partners we have worked with"
   },
   "programs": {
     "eyebrow": "Our programs",
@@ -275,7 +276,13 @@
     "more": "More photos & videos",
     "close": "Close",
     "prev": "Previous photo",
-    "next": "Next photo"
+    "next": "Next photo",
+    "photos": "Photos",
+    "videos": "Videos",
+    "videosTitle": "Our camps on video",
+    "videosLead": "Highlights and everyday moments from the programs we have run.",
+    "play": "Play video",
+    "channel": "View our YouTube channel"
   },
   "contact": {
     "title": "Contact NEXT",

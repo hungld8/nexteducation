@@ -204,7 +204,7 @@ module.exports = [
         images: ['skyline-school-1', 'skyline-school-3', 'skyline-library', 'skyline-school-4', 'skyline-school-2'],
       },
       {
-        name: { en: 'Accommodation · Mood Hoi An Riverside Resort & Spa', vi: 'Nơi ở · Mood Hoian Riverside Resort & Spa' },
+        name: { en: 'Accommodation', vi: 'Nơi ở' },
         images: ['mood-resort-night', 'mood-resort-facade', 'mood-resort-bikes', 'mood-resort-room'],
       },
       {

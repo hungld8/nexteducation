@@ -2,13 +2,11 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="/img/logo-white.png" alt="NEXT" width="150" height="66" loading="lazy">
+      <img src="/img/logo-white.png" alt="NEXT" width="160" height="42" loading="lazy">
       <p><%= t('footer.about') %></p>
       <div class="footer-social">
         <a href="<%= site.whatsapp %>" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
         <a href="<%= site.zalo %>" target="_blank" rel="noopener" aria-label="Zalo">Zalo</a>
-        <span>Line</span>
-        <span>KakaoTalk</span>
       </div>
     </div>
     <div>
@@ -24,7 +22,7 @@
       <h2 class="footer-title"><%= t('footer.contact') %></h2>
       <ul class="footer-contact">
         <li><%- include('icon', { name: 'phone', size: 18 }) %><a href="<%= site.hotlineHref %>"><%= site.hotline %> (<%= site.contactPerson %>)</a></li>
-        <li><%- include('icon', { name: 'message-circle', size: 18 }) %><span><%= t('contact.chat') %></span></li>
+        <li><%- include('icon', { name: 'message-circle', size: 18 }) %><span>WhatsApp · Zalo</span></li>
         <li><%- include('icon', { name: 'mail', size: 18 }) %><a href="mailto:<%= site.email %>"><%= site.email %></a></li>
         <li><%- include('icon', { name: 'map-pin', size: 18 }) %><span><%= L(site.offices[0].address) %></span></li>
       </ul>
@@ -46,6 +44,6 @@
   <figure><img alt="" data-lb-img><figcaption data-lb-cap></figcaption></figure>
   <button class="lb-btn lb-next" type="button" data-lb-next aria-label="<%= t('gallery.next') %>"><%- include('icon', { name: 'chevron-right' }) %></button>
 </div>
-<script src="/js/main.js?v=2" defer></script>
+<script src="/js/main.js?v=3" defer></script>
 </body>
 </html>

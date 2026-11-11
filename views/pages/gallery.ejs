@@ -1,22 +1,69 @@
 <%- include('../partials/head', { title: t('nav.gallery'), description: t('gallery.lead'), image: 'camp-group-banner' }) %>
 <%- include('../partials/page-hero', { bg: 'camp-bana', heading: t('gallery.title'), lead: t('gallery.lead'), eyebrow: '', crumbs: [{ label: t('nav.gallery') }] }) %>
+<% const featured = videos[0]; const restVideos = videos.slice(1); %>
 
 <section class="section">
   <div class="container">
-    <div class="filter-bar" role="group" aria-label="<%= t('gallery.title') %>">
-      <% ['all', 'camps', 'activities', 'trips', 'destinations'].forEach((c, i) => { %>
-      <button type="button" class="filter-btn" data-filter="<%= c %>" aria-pressed="<%= i === 0 ? 'true' : 'false' %>"><%= t('gallery.' + c) %></button>
-      <% }) %>
+    <div class="media-tabs" role="tablist" aria-label="<%= t('gallery.title') %>" data-media-tabs>
+      <a class="media-tab" role="tab" href="#photos" id="tab-photos" aria-controls="photos" aria-selected="true"><%- include('../partials/icon', { name: 'image', size: 18 }) %><%= t('gallery.photos') %></a>
+      <a class="media-tab" role="tab" href="#videos" id="tab-videos" aria-controls="videos" aria-selected="false"><%- include('../partials/icon', { name: 'play', size: 18 }) %><%= t('gallery.videos') %> <span class="media-count"><%= videos.length %></span></a>
     </div>
-    <div class="masonry" data-gallery>
-      <% gallery.forEach(g => { %>
-      <button type="button" class="gallery-item masonry-item" data-cat="<%= g.cat %>" data-lb-src="/images/<%= g.src %>.webp" data-lb-alt="<%= L(g.alt) %>">
-        <img src="/images/<%= g.src %>.webp" alt="<%= L(g.alt) %>" loading="lazy">
-      </button>
-      <% }) %>
+
+    <div class="media-panel" id="photos" role="tabpanel" aria-labelledby="tab-photos">
+      <div class="filter-bar" role="group" aria-label="<%= t('gallery.photos') %>">
+        <% ['all', 'camps', 'activities', 'trips', 'destinations'].forEach((c, i) => { %>
+        <button type="button" class="filter-btn" data-filter="<%= c %>" aria-pressed="<%= i === 0 ? 'true' : 'false' %>"><%= t('gallery.' + c) %></button>
+        <% }) %>
+      </div>
+      <div class="masonry" data-gallery>
+        <% gallery.forEach(g => { %>
+        <button type="button" class="gallery-item masonry-item" data-cat="<%= g.cat %>" data-lb-src="/images/<%= g.src %>.webp" data-lb-alt="<%= L(g.alt) %>">
+          <img src="/images/<%= g.src %>.webp" alt="<%= L(g.alt) %>" loading="lazy">
+        </button>
+        <% }) %>
+      </div>
+      <div class="center-row">
+        <a class="btn btn-outline" href="<%= site.mediaLink %>" target="_blank" rel="noopener"><%= t('gallery.more') %> <%- include('../partials/icon', { name: 'external', size: 18 }) %></a>
+      </div>
     </div>
-    <div class="center-row">
-      <a class="btn btn-outline" href="<%= site.mediaLink %>" target="_blank" rel="noopener"><%= t('gallery.more') %> <%- include('../partials/icon', { name: 'external', size: 18 }) %></a>
+
+    <div class="media-panel" id="videos" role="tabpanel" aria-labelledby="tab-videos">
+      <div class="section-head">
+        <h2><%= t('gallery.videosTitle') %></h2>
+        <p><%= t('gallery.videosLead') %></p>
+      </div>
+
+      <article class="video-featured">
+        <div class="video-frame">
+          <button type="button" class="video-thumb" data-yt="<%= featured.id %>" data-yt-title="<%= featured.title %>" aria-label="<%= t('gallery.play') %>: <%= featured.title %>">
+            <img src="https://i.ytimg.com/vi/<%= featured.id %>/maxresdefault.jpg" alt="" width="1280" height="720" loading="lazy">
+            <span class="video-play" aria-hidden="true"><%- include('../partials/icon', { name: 'play', size: 34 }) %></span>
+          </button>
+        </div>
+        <div class="video-meta">
+          <p class="video-tag"><%= L(featured.tag) %></p>
+          <h3><%= featured.title %></h3>
+        </div>
+      </article>
+
+      <ul class="video-grid">
+        <% restVideos.forEach(v => { %>
+        <li class="video-card">
+          <div class="video-frame">
+            <button type="button" class="video-thumb" data-yt="<%= v.id %>" data-yt-title="<%= v.title %>" aria-label="<%= t('gallery.play') %>: <%= v.title %>">
+              <img src="https://i.ytimg.com/vi/<%= v.id %>/hqdefault.jpg" srcset="https://i.ytimg.com/vi/<%= v.id %>/hqdefault.jpg 480w, https://i.ytimg.com/vi/<%= v.id %>/maxresdefault.jpg 1280w" sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 400px" alt="" width="480" height="270" loading="lazy">
+              <span class="video-play" aria-hidden="true"><%- include('../partials/icon', { name: 'play', size: 24 }) %></span>
+            </button>
+          </div>
+          <p class="video-tag"><%= L(v.tag) %></p>
+          <h3><%= v.title %></h3>
+        </li>
+        <% }) %>
+      </ul>
+
+      <div class="center-row">
+        <a class="btn btn-outline" href="<%= site.youtube %>" target="_blank" rel="noopener"><%= t('gallery.channel') %> <%- include('../partials/icon', { name: 'external', size: 18 }) %></a>
+      </div>
     </div>
   </div>
 </section>

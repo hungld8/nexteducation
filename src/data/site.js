@@ -3,7 +3,7 @@
 // Company-wide information (edit here to update the whole site)
 module.exports = {
   name: 'NEXT',
-  domain: 'www.next.edu.vn',
+  domain: 'next.edu.vn',
   hotline: '+84 936 383 612',
   hotlineHref: 'tel:+84936383612',
   contactPerson: 'Ms. Rose Nguyen',
@@ -120,8 +120,8 @@ module.exports = {
       name: 'Chen Li Hsun',
       role: { en: 'Student · Taiwan', vi: 'Học sinh · Đài Loan' },
       text: {
-        en: 'NEXT Education’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.',
-        vi: 'Trại hè của NEXT Education thực sự là trải nghiệm thay đổi cuộc đời tôi. Sự cân bằng giữa vui chơi và học tập thật hoàn hảo, và tôi đã có những người bạn gắn bó suốt đời.',
+        en: 'NEXT’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.',
+        vi: 'Trại hè của NEXT thực sự là trải nghiệm thay đổi cuộc đời tôi. Sự cân bằng giữa vui chơi và học tập thật hoàn hảo, và tôi đã có những người bạn gắn bó suốt đời.',
       },
     },
     {
@@ -148,5 +148,19 @@ module.exports = {
         vi: 'Hợp tác với NEXT cho trại hè là một trong những quyết định đúng đắn nhất của chúng tôi. Học sinh luôn hứng thú với các hoạt động thực hành, và NEXT đã điều chỉnh chương trình phù hợp với học sinh.',
       },
     },
+  ],
+  youtube: 'https://www.youtube.com/@Nextgroupvn',
+  partners: [
+    { key: 'api-next', name: 'API NEXT', w: 440, h: 96 },
+    { key: 'chooron', name: 'Chooron', w: 200, h: 230 },
+    { key: 'dhnn', name: 'ĐHNN', w: 210, h: 222 },
+    { key: 'duy-tan', name: 'Duy Tan University', w: 436, h: 148 },
+    { key: 'eduworld', name: 'Educere EduWorld', w: 426, h: 170 },
+    { key: 'emic', name: 'emic Hospitality', w: 422, h: 180 },
+    { key: 'fpt-schools', name: 'FPT Schools', w: 424, h: 202 },
+    { key: 'minh-toan', name: 'Minh Toan', w: 340, h: 184 },
+    { key: 'rmit', name: 'RMIT University', w: 430, h: 166 },
+    { key: 'sonha-auto', name: 'SONHA AUTO', w: 302, h: 236 },
+    { key: 'sky-line', name: 'Sky-Line', w: 556, h: 160 },
   ],
 };

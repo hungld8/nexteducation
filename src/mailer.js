@@ -20,6 +20,18 @@ function getTransporter() {
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+// Logs on startup whether the mail account can log in (see Render/Hostinger logs)
+async function verifyMail() {
+  const tx = getTransporter();
+  if (!tx) return console.log('[mail] SMTP not configured: contact form enquiries are only written to the log.');
+  try {
+    await tx.verify();
+    console.log(`[mail] SMTP login OK as ${process.env.SMTP_USER}. Enquiries go to ${process.env.MAIL_TO || 'dos@next.edu.vn'}.`);
+  } catch (err) {
+    console.error(`[mail] SMTP login FAILED for ${process.env.SMTP_USER}: ${err.message}`);
+  }
+}
+
 async function sendContact(data) {
   const tx = getTransporter();
   const rows = [
@@ -46,7 +58,7 @@ async function sendContact(data) {
     `</table><p><b>Message</b></p><p style="white-space:pre-wrap">${esc(data.message)}</p>`;
 
   await tx.sendMail({
-    from: process.env.MAIL_FROM || process.env.SMTP_USER,
+    from: process.env.MAIL_FROM || `NEXT Website <${process.env.SMTP_USER}>`,
     to: process.env.MAIL_TO || 'dos@next.edu.vn',
     replyTo: `${data.name} <${data.email}>`,
     subject: `[Website] ${data.program || 'Enquiry'} – ${data.name}`,
@@ -55,4 +67,4 @@ async function sendContact(data) {
   });
 }
 
-module.exports = { sendContact };
+module.exports = { sendContact, verifyMail };

@@ -62,7 +62,7 @@
     <div class="values-head reveal">
       <p class="eyebrow"><%= t('about.values.eyebrow') %></p>
       <h2><%= t('about.values.title') %></h2>
-      <%- include('../partials/pic', { name: 'hd/values-lake', cls: 'values-img', alt: '' }) %>
+      <%- include('../partials/pic', { name: 'hd/c32', cls: 'values-img', alt: L({ en: 'Mentor and students working together', vi: 'Giáo viên và học sinh cùng làm việc' }) }) %>
     </div>
     <ol class="value-list">
       <% t('about.values.items').forEach((v, i) => { %>
@@ -92,6 +92,12 @@
       <%- include('../partials/pic', { name: 'hd/d8', sizes: '(max-width: 900px) 50vw, 25vw', alt: L({ en: 'Camp group with partners', vi: 'Đoàn trại cùng đối tác' }) }) %>
       <%- include('../partials/pic', { name: 'hd/d69', sizes: '(max-width: 900px) 50vw, 25vw', alt: L({ en: 'Cultural visit', vi: 'Tham quan văn hóa' }) }) %>
     </div>
+  </div>
+  <div class="container partners reveal">
+    <h3 class="partners-title"><%= t('about.partnersTitle') %></h3>
+    <ul class="partner-logos">
+      <% site.partners.forEach(p => { %><li<% if (p.h / p.w > 0.7) { %> class="logo-tall"<% } %>><img src="/images/partners/<%= p.key %>.webp" alt="<%= p.name %>" width="<%= p.w %>" height="<%= p.h %>" loading="lazy"></li><% }) %>
+    </ul>
   </div>
 </section>
 

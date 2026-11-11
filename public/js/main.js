@@ -135,6 +135,52 @@
     });
   }
 
+  // Gallery: Photos / Videos tabs (hash-based, works without JS as anchors)
+  var tabs = document.querySelector('[data-media-tabs]');
+  if (tabs) {
+    var tabLinks = Array.prototype.slice.call(tabs.querySelectorAll('[role="tab"]'));
+    function selectTab(id, focus) {
+      tabLinks.forEach(function (a) {
+        var on = a.getAttribute('aria-controls') === id;
+        a.setAttribute('aria-selected', String(on));
+        a.tabIndex = on ? 0 : -1;
+        document.getElementById(a.getAttribute('aria-controls')).hidden = !on;
+        if (on && focus) a.focus();
+      });
+    }
+    function fromHash() { selectTab(location.hash === '#videos' ? 'videos' : 'photos'); }
+    tabLinks.forEach(function (a, i) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = a.getAttribute('aria-controls');
+        history.replaceState(null, '', '#' + id);
+        selectTab(id);
+      });
+      a.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var next = tabLinks[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabLinks.length) % tabLinks.length];
+        history.replaceState(null, '', '#' + next.getAttribute('aria-controls'));
+        selectTab(next.getAttribute('aria-controls'), true);
+      });
+    });
+    window.addEventListener('hashchange', fromHash);
+    fromHash();
+  }
+
+  // YouTube: show thumbnail first, load the player only when clicked
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-yt]');
+    if (!btn) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.dataset.yt) + '?autoplay=1&rel=0&playsinline=1';
+    iframe.title = btn.dataset.ytTitle || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    btn.replaceWith(iframe);
+    iframe.focus();
+  });
+
   // Contact form: inline validation + AJAX submit
   var form = document.querySelector('[data-contact-form]');
   if (form) {

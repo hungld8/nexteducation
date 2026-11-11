@@ -32,10 +32,10 @@ const navItems = [
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800<% if (langInfo.font) { %>&family=<%= langInfo.font %>:wght@400;500;700;800<% } %>&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=5">
+  <link rel="stylesheet" href="/css/styles.css?v=7">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://www.next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
+  {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
   </script>
 </head>
 <body class="page-<%= page %>">
@@ -43,7 +43,7 @@ const navItems = [
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="<%= url('/') %>" aria-label="NEXT – <%= t('nav.home') %>">
-      <img src="/img/logo.png" alt="NEXT" width="128" height="56">
+      <img src="/img/logo.png" alt="NEXT" width="152" height="40">
     </a>
     <nav class="main-nav" id="main-nav" aria-label="Main">
       <ul>

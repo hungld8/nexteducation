@@ -17,7 +17,8 @@ if (fs.existsSync(envPath)) {
 const site = require('./src/data/site');
 const programs = require('./src/data/programs');
 const gallery = require('./src/data/gallery');
-const { sendContact } = require('./src/mailer');
+const videos = require('./src/data/videos');
+const { sendContact, verifyMail } = require('./src/mailer');
 
 const { LANGUAGES, LANGS, DEFAULT_LANG } = require('./src/languages');
 const imageSizes = require('./src/data/image-sizes.json');
@@ -35,6 +36,11 @@ app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+// Official domain is next.edu.vn: send www.next.edu.vn visitors there
+app.use((req, res, next) => {
+  if (req.hostname === 'www.next.edu.vn') return res.redirect(301, `https://next.edu.vn${req.originalUrl}`);
+  next();
+});
 app.use(compression());
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -122,7 +128,7 @@ router.get('/programs/:slug', (req, res, next) => {
   if (!program) return next();
   res.render('pages/program', { page: 'programs', program });
 });
-router.get('/gallery', (req, res) => res.render('pages/gallery', { page: 'gallery', gallery }));
+router.get('/gallery', (req, res) => res.render('pages/gallery', { page: 'gallery', gallery, videos }));
 router.get('/contact', (req, res) =>
   res.render('pages/contact', { page: 'contact', sent: req.query.sent === '1', error: req.query.error === '1', selected: req.query.program || '' })
 );
@@ -191,4 +197,7 @@ app.use((req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Next Education website running on http://localhost:${PORT}`));
+app.listen(PORT, () => {
+  console.log(`NEXT website running on http://localhost:${PORT}`);
+  verifyMail();
+});

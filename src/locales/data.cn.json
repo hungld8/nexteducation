@@ -42,7 +42,7 @@
   "USA": "美国",
   "Canada": "加拿大",
   "Student · Taiwan": "学生 · 台湾",
-  "NEXT Education’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXT Education 的夏令营真的是一次改变人生的经历。娱乐活动与学习的平衡恰到好处，我还结交了一生的好朋友。",
+  "NEXT’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXT 的夏令营真的是一次改变人生的经历。娱乐活动与学习的平衡恰到好处，我还结交了一生的好朋友。",
   "Student · Korea": "学生 · 韩国",
   "The Sustainability camp was fantastic! We learned to make eco‑friendly products and visited sustainable farms. I left motivated to do more for the environment.": "可持续发展营地太棒了！我们学习制作环保产品，参观了可持续农场。回来后，我更有动力为环境做更多事情。",
   "Partner · Next Apitree": "合作伙伴 · Next Apitree",
@@ -178,7 +178,6 @@
   "Evening activity": "晚间活动",
   "Roll call": "点名",
   "Learning · Skyline Hill International School Hoi An": "学习 · 会安 Skyline Hill 国际学校",
-  "Accommodation · Mood Hoi An Riverside Resort & Spa": "住宿 · Mood Hoi An Riverside Resort & Spa",
   "Food · Vietnamese & international cuisine": "餐饮 · 越南美食与国际料理",
   "International campers group photo": "国际营员合影",
   "Happy campers": "快乐的营员们",
@@ -210,7 +209,7 @@
   "Student tour group": "学生研学团",
   "Student group by the beach": "海边的学生团",
   "Students in a craft workshop": "参加手工工作坊的学生",
-  "Next Education international student group": "Next Education 国际学生团",
+  "NEXT international student group": "NEXT 国际学生团",
   "Campers making lanterns in Hoi An": "在会安制作灯笼的营员",
   "Golden Bridge, Ba Na Hills": "巴拿山金桥",
   "Lanterns in Hoi An Ancient Town": "会安古城的灯笼",
@@ -226,5 +225,10 @@
   "Camp group on the beach in Da Nang": "岘港海滩上的营员",
   "Lantern shop in Hoi An": "会安灯笼店",
   "Tasting local food": "品尝当地美食",
-  "Student tour abroad": "海外学生游学"
+  "Student tour abroad": "海外学生游学",
+  "Accommodation": "住宿",
+  "Mentor and students working together": "导师与学生一起协作",
+  "Introduction": "介绍",
+  "Camp highlights": "营地精彩回顾",
+  "Camp activities": "营地活动"
 }

@@ -39,7 +39,7 @@
       "我们与国际旅行品牌、学校及机构合作，在越南各地设计、开发并执行定制化项目。",
       "我们融合在地专业知识、用心的项目设计与值得信赖的合作伙伴网络，将创意转化为有意义的旅程与真实的体验。"
     ],
-    "tagline": "探索。连接。贡献。",
+    "tagline": "学习。探索。连接。贡献。",
     "introLink": "进一步了解 NEXT",
     "programsEyebrow": "我们的项目",
     "programsTitle": "有目标的体验，有影响力的学习。",
@@ -115,7 +115,8 @@
         "通过携手合作，我们让在地知识鲜活起来，并加深合作伙伴与其所探索目的地之间的联系。"
       ]
     },
-    "officesTitle": "办公地点"
+    "officesTitle": "办公地点",
+    "partnersTitle": "合作伙伴"
   },
   "programs": {
     "eyebrow": "我们的项目",
@@ -275,7 +276,13 @@
     "more": "更多照片与视频",
     "close": "关闭",
     "prev": "上一张",
-    "next": "下一张"
+    "next": "下一张",
+    "photos": "照片",
+    "videos": "视频",
+    "videosTitle": "NEXT 营地视频",
+    "videosLead": "我们已举办项目的精彩瞬间与日常活动。",
+    "play": "播放视频",
+    "channel": "访问我们的 YouTube 频道"
   },
   "contact": {
     "title": "联系 NEXT",

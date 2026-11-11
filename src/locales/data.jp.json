@@ -42,7 +42,7 @@
   "USA": "アメリカ",
   "Canada": "カナダ",
   "Student · Taiwan": "学生 · 台湾",
-  "NEXT Education’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXT Educationのサマーキャンプは、まさに人生が変わる経験でした。楽しいアクティビティと学びのバランスが完璧で、一生の友達もできました。",
+  "NEXT’s summer camp was truly a life‑changing experience. The balance between fun activities and learning was perfect, and I made friendships that will last a lifetime.": "NEXTのサマーキャンプは、まさに人生が変わる経験でした。楽しいアクティビティと学びのバランスが完璧で、一生の友達もできました。",
   "Student · Korea": "学生 · 韓国",
   "The Sustainability camp was fantastic! We learned to make eco‑friendly products and visited sustainable farms. I left motivated to do more for the environment.": "サステナビリティキャンプは最高でした！エコな製品づくりや、持続可能な農場の見学を体験しました。環境のためにもっと行動したいという気持ちで帰国しました。",
   "Partner · Next Apitree": "パートナー · Next Apitree",
@@ -178,7 +178,6 @@
   "Evening activity": "夜のアクティビティ",
   "Roll call": "点呼",
   "Learning · Skyline Hill International School Hoi An": "学習 · スカイラインヒル・インターナショナルスクール・ホイアン",
-  "Accommodation · Mood Hoi An Riverside Resort & Spa": "宿泊 · ムード・ホイアン・リバーサイドリゾート＆スパ",
   "Food · Vietnamese & international cuisine": "食事 · ベトナム料理＆各国料理",
   "International campers group photo": "国際キャンプ参加者の集合写真",
   "Happy campers": "楽しそうなキャンプ参加者",
@@ -210,7 +209,7 @@
   "Student tour group": "学生ツアーのグループ",
   "Student group by the beach": "ビーチでの学生グループ",
   "Students in a craft workshop": "クラフトワークショップに参加する学生",
-  "Next Education international student group": "Next Educationの国際学生グループ",
+  "NEXT international student group": "NEXTの国際学生グループ",
   "Campers making lanterns in Hoi An": "ホイアンでランタンを作る参加者",
   "Golden Bridge, Ba Na Hills": "ゴールデンブリッジ（バーナーヒルズ）",
   "Lanterns in Hoi An Ancient Town": "ホイアン旧市街のランタン",
@@ -226,5 +225,10 @@
   "Camp group on the beach in Da Nang": "ダナンのビーチでのキャンプ参加者",
   "Lantern shop in Hoi An": "ホイアンのランタンショップ",
   "Tasting local food": "ローカルフードを味わう",
-  "Student tour abroad": "海外スタディツアー"
+  "Student tour abroad": "海外スタディツアー",
+  "Accommodation": "宿泊",
+  "Mentor and students working together": "メンターと一緒に取り組む生徒たち",
+  "Introduction": "紹介",
+  "Camp highlights": "キャンプのハイライト",
+  "Camp activities": "キャンプの活動"
 }

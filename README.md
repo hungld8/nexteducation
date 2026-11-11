@@ -1,4 +1,4 @@
-# Next Education – Website
+# NEXT – Website
 
 Website đa ngữ **Anh · Việt · Hàn · Nhật · Trung** của NEXT – Specialized DMC & Experience Development (du lịch giáo dục, văn hóa và trải nghiệm tại Việt Nam).
 
@@ -51,8 +51,8 @@ Cần gói Hostinger có hỗ trợ **Node.js** (Business Web Hosting, Cloud Hos
    - Start command: `npm start` · Entry file: `server.js`
 3. **Environment variables** (xem `.env.example`):
    - `NODE_ENV=production`
-   - `SITE_URL=https://www.next.edu.vn`
-   - `SMTP_HOST=smtp.hostinger.com`, `SMTP_PORT=465`, `SMTP_USER`, `SMTP_PASS`, `MAIL_TO=dos@next.edu.vn`
+   - `SITE_URL=https://next.edu.vn`
+   - `SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`, `SMTP_USER=dos@next.edu.vn`, `SMTP_PASS` (Google App Password 16 ký tự, không phải mật khẩu đăng nhập), `MAIL_TO=dos@next.edu.vn`
 4. Deploy, sau đó gắn tên miền (`next.edu.vn`) và bật SSL trong hPanel.
 5. Mỗi lần `git push` lên `main`, Hostinger sẽ tự deploy lại (nếu bật auto-deploy).
 

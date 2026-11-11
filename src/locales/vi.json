@@ -39,7 +39,7 @@
       "Chúng tôi hợp tác cùng các thương hiệu du lịch quốc tế, trường học và tổ chức để thiết kế, phát triển và triển khai các chương trình may đo trên khắp Việt Nam.",
       "Kết hợp am hiểu địa phương, tư duy thiết kế chương trình chỉn chu và mạng lưới đối tác tin cậy, chúng tôi biến ý tưởng thành những hành trình ý nghĩa và trải nghiệm thực tế."
     ],
-    "tagline": "Khám phá. Kết nối. Đóng góp.",
+    "tagline": "Học hỏi. Khám phá. Kết nối. Đóng góp.",
     "introLink": "Tìm hiểu thêm về NEXT",
     "programsEyebrow": "Chương trình",
     "programsTitle": "Trải nghiệm có mục đích. Học tập tạo tác động.",
@@ -115,7 +115,8 @@
         "Bằng sự đồng hành, chúng tôi làm sống động hiểu biết địa phương và tạo nên kết nối bền chặt hơn giữa đối tác với những điểm đến họ khám phá."
       ]
     },
-    "officesTitle": "Văn phòng"
+    "officesTitle": "Văn phòng",
+    "partnersTitle": "Đối tác đã đồng hành cùng NEXT"
   },
   "programs": {
     "eyebrow": "Chương trình",
@@ -275,7 +276,13 @@
     "more": "Thêm hình ảnh & video",
     "close": "Đóng",
     "prev": "Ảnh trước",
-    "next": "Ảnh tiếp theo"
+    "next": "Ảnh tiếp theo",
+    "photos": "Ảnh",
+    "videos": "Video",
+    "videosTitle": "Các trại của NEXT qua video",
+    "videosLead": "Những khoảnh khắc nổi bật và hoạt động thường ngày từ các chương trình NEXT đã tổ chức.",
+    "play": "Phát video",
+    "channel": "Xem kênh YouTube của NEXT"
   },
   "contact": {
     "title": "Liên hệ NEXT",

@@ -1,7 +1,7 @@
 {
   "name": "next-education-website",
   "version": "1.0.0",
-  "description": "Next Education – International summer & winter camps in Hoi An – Da Nang, Vietnam (bilingual EN/VI website)",
+  "description": "NEXT – International summer & winter camps in Hoi An – Da Nang, Vietnam (bilingual EN/VI website)",
   "main": "server.js",
   "private": true,
   "scripts": {
