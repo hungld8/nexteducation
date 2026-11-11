@@ -30,15 +30,34 @@ for (const l of LANGS) {
   dataDict[l] = fs.existsSync(dictPath) ? require(dictPath) : {};
 }
 
+// Content Security Policy: only our own scripts, Google Fonts and YouTube embeds/thumbnails
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='",
+  "style-src 'self' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "img-src 'self' data: https://i.ytimg.com",
+  "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
+  "connect-src 'self'",
+  "form-action 'self'",
+  "frame-ancestors 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+].join('; ');
+
 const app = express();
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Official domain is next.edu.vn: send www.next.edu.vn visitors there
+// Official domain is next.edu.vn: send www and old/preview hosts there (avoids duplicate pages in Google)
+const OFFICIAL = 'https://next.edu.vn';
 app.use((req, res, next) => {
-  if (req.hostname === 'www.next.edu.vn') return res.redirect(301, `https://next.edu.vn${req.originalUrl}`);
+  const h = req.hostname || '';
+  if (h === 'www.next.edu.vn' || h.endsWith('.onrender.com') || h.endsWith('.hostingersite.com')) {
+    return res.redirect(301, `${OFFICIAL}${req.originalUrl}`);
+  }
   next();
 });
 app.use(compression());
@@ -46,6 +65,10 @@ app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  res.setHeader('Content-Security-Policy', req.secure ? `${CSP}; upgrade-insecure-requests` : CSP);
+  if (req.secure) res.setHeader('Strict-Transport-Security', 'max-age=31536000');
   next();
 });
 app.use(
@@ -105,6 +128,7 @@ function withLang(req, res, next) {
   res.locals.url = (p = '/') => `/${lang}${p === '/' ? '' : p}`;
   res.locals.canonical = `${baseUrl(req)}/${lang}${suffix}`;
   res.locals.alternates = LANGUAGES.map((l) => ({ lang: l.hreflang, href: `${baseUrl(req)}/${l.code}${suffix}` }));
+  res.locals.baseUrl = baseUrl(req);
   res.locals.year = new Date().getFullYear();
   next();
 }
@@ -114,6 +138,7 @@ app.get('/', (req, res) => {
   const browserCodes = LANGUAGES.flatMap((l) => l.accept);
   const pref = req.acceptsLanguages(...browserCodes);
   const match = pref && LANGUAGES.find((l) => l.accept.includes(pref));
+  res.set('Vary', 'Accept-Language');
   res.redirect(302, `/${match ? match.code : DEFAULT_LANG}`);
 });
 
@@ -133,10 +158,26 @@ router.get('/contact', (req, res) =>
   res.render('pages/contact', { page: 'contact', sent: req.query.sent === '1', error: req.query.error === '1', selected: req.query.program || '' })
 );
 
+// Simple in-memory rate limit: max 5 contact submissions per IP per 15 minutes
+const contactHits = new Map();
+function tooManyContacts(ip) {
+  const now = Date.now();
+  const recent = (contactHits.get(ip) || []).filter((t) => now - t < 15 * 60 * 1000);
+  recent.push(now);
+  contactHits.set(ip, recent);
+  if (contactHits.size > 5000) contactHits.clear();
+  return recent.length > 5;
+}
+
 router.post('/contact', async (req, res) => {
   const lang = res.locals.lang;
   const wantsJson = (req.get('accept') || '').includes('application/json');
-  const clean = (v, max = 500) => String(v || '').trim().slice(0, max);
+  if (tooManyContacts(req.ip)) {
+    return wantsJson ? res.status(429).json({ ok: false }) : res.redirect(`/${lang}/contact?error=1`);
+  }
+  // Strip control characters (incl. line breaks) from single-line fields
+  const clean = (v, max = 500) => String(v || '').replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
+  const cleanText = (v, max) => String(v || '').replace(/\r\n?/g, '\n').replace(/[\u0000-\u0009\u000b-\u001f\u007f]/g, '').trim().slice(0, max);
   const data = {
     name: clean(req.body.name, 120),
     email: clean(req.body.email, 160),
@@ -145,7 +186,7 @@ router.post('/contact', async (req, res) => {
     country: clean(req.body.country, 80),
     program: clean(req.body.program, 120),
     participants: clean(req.body.participants, 20),
-    message: clean(req.body.message, 3000),
+    message: cleanText(req.body.message, 3000),
     lang,
   };
   // Honeypot field for bots
@@ -177,10 +218,12 @@ app.get('/robots.txt', (req, res) => {
 app.get('/sitemap.xml', (req, res) => {
   const paths = ['', '/about', '/programs', '/why-next', ...programs.map((p) => `/programs/${p.slug}`), '/gallery', '/contact'];
   const b = baseUrl(req);
+  // One <url> per language version, each listing all alternates (+ x-default)
+  const alts = (p) =>
+    LANGUAGES.map((l) => `<xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${b}/${l.code}${p}"/>`).join('') +
+    `<xhtml:link rel="alternate" hreflang="x-default" href="${b}/${DEFAULT_LANG}${p}"/>`;
   const urls = paths
-    .map(
-      (p) => `  <url><loc>${b}/en${p}</loc>${LANGUAGES.map((l) => `<xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${b}/${l.code}${p}"/>`).join('')}</url>`
-    )
+    .flatMap((p) => LANGUAGES.map((l) => `  <url><loc>${b}/${l.code}${p}</loc>${alts(p)}</url>`))
     .join('\n');
   res
     .type('application/xml')
@@ -194,6 +237,13 @@ app.use((req, res) => {
   withLang(Object.assign(req, { params: { lang } }), res, () => {
     res.status(404).render('pages/404', { page: '404' });
   });
+});
+
+// Errors (e.g. malformed form data): never show technical details
+app.use((err, req, res, next) => {
+  const status = err.status || err.statusCode || 500;
+  if (status >= 500) console.error('[error]', err.message);
+  res.status(status).type('text/plain').send(status < 500 ? 'Bad request' : 'Something went wrong');
 });
 
 const PORT = process.env.PORT || 3000;

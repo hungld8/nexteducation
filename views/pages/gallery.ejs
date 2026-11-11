@@ -1,4 +1,4 @@
-<%- include('../partials/head', { title: t('nav.gallery'), description: t('gallery.lead'), image: 'camp-group-banner' }) %>
+<%- include('../partials/head', { title: t('nav.gallery'), description: t('gallery.lead') + ' ' + t('gallery.videosLead'), image: 'camp-group-banner' }) %>
 <%- include('../partials/page-hero', { bg: 'camp-bana', heading: t('gallery.title'), lead: t('gallery.lead'), eyebrow: '', crumbs: [{ label: t('nav.gallery') }] }) %>
 <% const featured = videos[0]; const restVideos = videos.slice(1); %>
 

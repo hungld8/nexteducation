@@ -60,7 +60,7 @@ async function sendContact(data) {
   await tx.sendMail({
     from: process.env.MAIL_FROM || `NEXT Website <${process.env.SMTP_USER}>`,
     to: process.env.MAIL_TO || 'dos@next.edu.vn',
-    replyTo: `${data.name} <${data.email}>`,
+    replyTo: { name: data.name, address: data.email },
     subject: `[Website] ${data.program || 'Enquiry'} – ${data.name}`,
     text,
     html,

@@ -1,7 +1,10 @@
 <%
 const pageTitle = typeof title !== 'undefined' && title ? `${title} | NEXT` : t('meta.title');
-const pageDesc = typeof description !== 'undefined' && description ? description : t('meta.description');
+const _rawDesc = String(typeof description !== 'undefined' && description ? description : t('meta.description')).replace(/\s+/g, ' ').trim();
+// Keep meta descriptions within ~155 characters (search engines cut longer ones)
+const pageDesc = _rawDesc.length > 158 ? _rawDesc.slice(0, 155).replace(/[\s,;:–-]+\S*$/, '') + '…' : _rawDesc;
 const ogImage = typeof image !== 'undefined' && image ? image : 'hero-banner-sm';
+const ogImageUrl = `${baseUrl}/images/og/${ogImage.replace(/\//g, '-')}.jpg`;
 const navItems = [
   { key: 'home', href: url('/') },
   { key: 'about', href: url('/about') },
@@ -25,7 +28,13 @@ const navItems = [
   <meta property="og:title" content="<%= pageTitle %>">
   <meta property="og:description" content="<%= pageDesc %>">
   <meta property="og:url" content="<%= canonical %>">
-  <meta property="og:image" content="/images/<%= ogImage %>.webp">
+  <meta property="og:image" content="<%= ogImageUrl %>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= pageTitle %>">
+  <meta name="twitter:description" content="<%= pageDesc %>">
+  <meta name="twitter:image" content="<%= ogImageUrl %>">
   <meta property="og:locale" content="<%= langInfo.og %>">
   <meta name="theme-color" content="#2E7016">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
@@ -35,7 +44,7 @@ const navItems = [
   <link rel="stylesheet" href="/css/styles.css?v=7">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://next.edu.vn","logo":"/img/logo.png","email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
+  {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://next.edu.vn","logo":"https://next.edu.vn/img/logo.png","image":"https://next.edu.vn/images/og/hero-banner-sm.jpg","sameAs":["<%= site.youtube %>"],"email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
   </script>
 </head>
 <body class="page-<%= page %>">
