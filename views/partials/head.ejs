@@ -43,6 +43,9 @@ const navItems = [
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800<% if (langInfo.font) { %>&family=<%= langInfo.font %>:wght@400;500;700;800<% } %>&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css?v=7">
   <script>document.documentElement.classList.add('js')</script>
+  <% if (gaId) { %><script async src="https://www.googletagmanager.com/gtag/js?id=<%= gaId %>"></script>
+  <script src="/js/analytics.js?v=1" data-ga-id="<%= gaId %>"></script>
+  <% } %>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"TravelAgency","name":"NEXT","slogan":"Change starts here.","url":"https://next.edu.vn","logo":"https://next.edu.vn/img/logo.png","image":"https://next.edu.vn/images/og/hero-banner-sm.jpg","sameAs":["<%= site.youtube %>"],"email":"<%= site.email %>","telephone":"<%= site.hotline %>","address":{"@type":"PostalAddress","streetAddress":"No. 2, 30/4 Street, Hai Chau District","addressLocality":"Da Nang","addressCountry":"VN"}}
   </script>

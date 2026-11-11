@@ -30,15 +30,15 @@ for (const l of LANGS) {
   dataDict[l] = fs.existsSync(dictPath) ? require(dictPath) : {};
 }
 
-// Content Security Policy: only our own scripts, Google Fonts and YouTube embeds/thumbnails
+// Content Security Policy: only our own scripts, Google Fonts, Google Analytics and YouTube embeds/thumbnails
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='",
+  "script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo=' https://www.googletagmanager.com",
   "style-src 'self' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
-  "img-src 'self' data: https://i.ytimg.com",
+  "img-src 'self' data: https://i.ytimg.com https://*.google-analytics.com https://*.googletagmanager.com",
   "frame-src https://www.youtube-nocookie.com https://www.youtube.com",
-  "connect-src 'self'",
+  "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
   "form-action 'self'",
   "frame-ancestors 'self'",
   "base-uri 'self'",
@@ -129,6 +129,7 @@ function withLang(req, res, next) {
   res.locals.canonical = `${baseUrl(req)}/${lang}${suffix}`;
   res.locals.alternates = LANGUAGES.map((l) => ({ lang: l.hreflang, href: `${baseUrl(req)}/${l.code}${suffix}` }));
   res.locals.baseUrl = baseUrl(req);
+  res.locals.gaId = process.env.NODE_ENV === 'production' && /^G-[A-Z0-9]+$/.test(site.gaId) ? site.gaId : '';
   res.locals.year = new Date().getFullYear();
   next();
 }

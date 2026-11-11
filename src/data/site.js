@@ -150,6 +150,8 @@ module.exports = {
     },
   ],
   youtube: 'https://www.youtube.com/@Nextgroupvn',
+  // Google Analytics 4 Measurement ID (can be overridden with the GA_MEASUREMENT_ID environment variable)
+  gaId: process.env.GA_MEASUREMENT_ID || 'G-SJHF20PQDT',
   partners: [
     { key: 'api-next', name: 'API NEXT', w: 440, h: 96 },
     { key: 'chooron', name: 'Chooron', w: 200, h: 230 },

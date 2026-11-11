@@ -3,6 +3,21 @@
   document.documentElement.classList.add('js');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Google Analytics events (no-op when Analytics is not loaded, e.g. local testing)
+  function track(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    var where = a.closest('.float-chat') ? 'floating_button' : a.closest('footer') ? 'footer' : a.closest('header') ? 'header' : 'page';
+    if (href.indexOf('tel:') === 0) track('phone_click', { link_location: where });
+    else if (href.indexOf('mailto:') === 0) track('email_click', { link_location: where });
+    else if (href.indexOf('wa.me') !== -1) track('whatsapp_click', { link_location: where });
+    else if (href.indexOf('zalo.me') !== -1) track('zalo_click', { link_location: where });
+  });
+
   // Sticky header shadow
   var header = document.querySelector('[data-header]');
   var onScroll = function () { header && header.classList.toggle('is-scrolled', window.scrollY > 8); };
@@ -171,6 +186,7 @@
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('[data-yt]');
     if (!btn) return;
+    track('video_play', { video_id: btn.dataset.yt, video_title: btn.dataset.ytTitle || '' });
     var iframe = document.createElement('iframe');
     iframe.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(btn.dataset.yt) + '?autoplay=1&rel=0&playsinline=1';
     iframe.title = btn.dataset.ytTitle || 'YouTube video';
@@ -226,7 +242,10 @@
           p.className = 'alert ' + (res.ok ? 'alert-success' : 'alert-error');
           p.textContent = res.ok ? form.dataset.msgSent : form.dataset.msgError;
           status.appendChild(p);
-          if (res.ok) form.reset();
+          if (res.ok) {
+            track('generate_lead', { form_name: 'contact', program: (form.elements.program && form.elements.program.value) || '' });
+            form.reset();
+          }
           status.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
         })
         .catch(function () {
